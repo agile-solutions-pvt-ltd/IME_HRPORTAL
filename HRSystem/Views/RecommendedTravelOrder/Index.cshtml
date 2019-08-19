@@ -1,0 +1,98 @@
+﻿@model IEnumerable<RecommendedTravelOrder.recommendedtravelorder>
+
+@{
+    ViewData["Title"] = "Recommended Travel Orders";
+}
+
+@section StyleSheets {
+    <link href="~/lib/DataTables/datatables.min.css" rel="stylesheet" />
+}
+
+<section class="panel">
+    <header class="panel-heading">
+        <h2 class="panel-title">
+            Recommended Travel Orders
+        </h2>
+    </header>
+
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-none" id="tbl_RecommendedTravelOrder">
+                <thead>
+                    <tr>
+                        <th>
+                            Employee No
+                        </th>
+                        <th>
+                            Employee Name
+                        </th>
+                        <th>
+                            Travel Order No
+                        </th>
+                        <th>
+                            Requested Date
+                        </th>
+                        <th>
+                            Travel Type
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee_No)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Travel_Order_No)
+                            </td>
+                            <td>
+                                @item.Requested_Date.ToShortDateString()
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Travel_Type)
+                            </td>
+                            <td class="actions">
+                                <a title="Approve" data-toggle="tooltip" asp-action="ApproveRequest" asp-route-travelOrderNo="@item.Travel_Order_No">
+                                    <i class="fa fa-check-circle-o"></i>
+                                </a>
+
+                                <a title="Reject" data-toggle="tooltip" asp-action="RejectRequest" asp-route-travelOrderNo="@item.Travel_Order_No">
+                                    <i class="fa fa-ban"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <script src="~/lib/DataTables/datatables.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+
+            'use strict';
+
+            var datatableInit = function () {
+                $('#tbl_RecommendedTravelOrder').dataTable();
+            };
+
+            $(function () {
+                datatableInit();
+            });
+
+        })();
+    </script>
+}

@@ -1,0 +1,112 @@
+﻿@model HRSystem.Models.PostedLeaveRequestViewModel
+
+@{
+    ViewData["Title"] = "Recommend Leave Request";
+}
+
+<section class="panel">
+    <form asp-action="RecommendRequest">
+        <header class="panel-heading">
+            <h2 class="panel-title">
+                Recommend Leave Request
+            </h2>
+        </header>
+
+        <div class="panel-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Key" type="hidden" />
+            <input asp-for="Leave_Request_No" type="hidden" />
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Employee_No" class="control-label"></label>
+                        <input asp-for="Employee_No" class="form-control" readonly />
+                        <span asp-validation-for="Employee_No" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Full_Name" class="control-label"></label>
+                        <input asp-for="Full_Name" class="form-control" readonly />
+                        <span asp-validation-for="Full_Name" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Requested_Date" class="control-label"></label>
+                        <input asp-for="Requested_Date" class="form-control" readonly />
+                        <span asp-validation-for="Requested_Date" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Leave_Type_Code" class="control-label"></label>
+                        <input asp-for="Leave_Type_Code" class="form-control" readonly />
+                        <span asp-validation-for="Leave_Type_Code" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Leave_Start_Date" class="control-label"></label>
+                        <input asp-for="Leave_Start_Date" class="form-control" readonly />
+                        <span asp-validation-for="Leave_Start_Date" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Leave_End_Date" class="control-label"></label>
+                        <input asp-for="Leave_End_Date" class="form-control" readonly />
+                        <span asp-validation-for="Leave_End_Date" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Leave_Description" class="control-label"></label>
+                        <input asp-for="Leave_Description" class="form-control" readonly />
+                        <span asp-validation-for="Leave_Description" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Remarks" class="control-label"></label>
+                        <textarea asp-for="Remarks" class="form-control" readonly></textarea>
+                        <span asp-validation-for="Remarks" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="No_of_Days" class="control-label"></label>
+                        <input asp-for="No_of_Days" class="form-control" readonly />
+                        <span asp-validation-for="No_of_Days" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="panel-footer">
+            <input type="submit" value="Recommend" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-default">Cancel</a>
+        </footer>
+    </form>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

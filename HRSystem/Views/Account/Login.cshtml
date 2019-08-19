@@ -1,0 +1,148 @@
+﻿@model Login
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="fixed">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Login</title>
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Lib CSS -->
+    <link href="~/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/lib/pnotify/pnotify.custom.css" rel="stylesheet" />
+
+    <!-- Theme CSS -->
+    <link href="~/css/theme.css" rel="stylesheet" />
+
+    <!-- Skin CSS -->
+    <link href="~/css/skins/default.css" rel="stylesheet" />
+
+    <!-- Theme Custom CSS -->
+    <link href="~/css/theme-custom.css" rel="stylesheet" />
+
+    <!-- Head Libs -->
+    <script src="~/lib/modernizr/modernizr.js"></script>
+</head>
+<body>
+    <!-- start: page -->
+    <section class="body-sign">
+        <div class="center-sign">
+            <div class="panel panel-sign">
+                <div class="panel-title-sign mt-xl text-right">
+                    <h2 class="title text-uppercase text-bold m-none"><i class="fa fa-user mr-xs"></i> Sign In</h2>
+                </div>
+
+                <div class="panel-body">
+                    <form asp-action="Login">
+                        <input asp-for="ReturnUrl" value="@Model.ReturnUrl" class="hidden" />
+
+                        <div class="form-group mb-lg">
+                            <label asp-for="Company"></label>
+
+                            <div class="input-group input-group-icon">
+                                <select asp-for="Company" asp-items="Model.Companies"></select>
+                            </div>
+
+                            <span asp-validation-for="Company" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-lg">
+                            <label asp-for="Username"></label>
+
+                            <div class="input-group input-group-icon">
+                                <input asp-for="Username" class="form-control input-lg" />
+
+                                <span class="input-group-addon">
+                                    <span class="icon icon-lg">
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-lg">
+                            <div class="clearfix">
+                                <label asp-for="Password" class="pull-left"></label>
+                            </div>
+
+                            <div class="input-group input-group-icon">
+                                <input asp-for="Password" class="form-control input-lg" />
+
+                                <span class="input-group-addon">
+                                    <span class="icon icon-lg">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="checkbox-custom checkbox-default">
+                                    <input asp-for="RememberMe" type="checkbox" />
+                                    <label asp-for="RememberMe">Remember Me</label>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 text-right">
+                                <button type="submit" class="btn btn-primary hidden-xs">Sign In</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <p class="text-center text-muted mt-md mb-md">&copy; Copyright 2019. All rights reserved.</p>
+        </div>
+    </section>
+    <!-- end: page -->
+
+    <!-- Lib -->
+    <script src="~/lib/jquery/jquery-3.4.1.js"></script>
+    <script src="~/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/lib/nanoscroller/nanoscroller.js"></script>
+    <script src="~/lib/pnotify/pnotify.custom.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/js/theme.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="~/js/theme.custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/js/theme.init.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+            @if(TempData["Notify"] == null)
+            {
+                TempData["Notify"] = "false";
+            }
+
+            let notifyDetails = @Html.Raw(TempData["Notify"]);
+            if (notifyDetails instanceof Object) {
+                new PNotify({
+                    title: notifyDetails.title,
+                    text: notifyDetails.text,
+                    type: notifyDetails.type
+                });
+            }
+        })();
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+</body>
+</html>

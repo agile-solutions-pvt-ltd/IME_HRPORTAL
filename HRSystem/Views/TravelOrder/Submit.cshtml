@@ -1,0 +1,279 @@
+﻿@model TravelOrderViewModel
+
+@{
+    ViewData["Title"] = "Submit Travel Order";
+}
+
+@section StyleSheets {
+    <link href="~/lib/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+}
+
+<section class="panel">
+    <form asp-action="Submit">
+        <header class="panel-heading">
+            <h2 class="panel-title">
+                Submit Travel Order
+            </h2>
+        </header>
+
+        <div class="panel-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h5><b>General Details</b></h5>
+            <hr />
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Employee_No" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Employee_No" class="form-control" readonly value="@User.Identity.GetEmployeeNo()" />
+                        <span asp-validation-for="Employee_No" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Employee_Name" class="col-sm-4 control-label "></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Employee_Name" class="form-control col-sm-3" readonly value="@User.Identity.Name" />
+                        <span asp-validation-for="Employee_Name" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Type" class="col-sm-4 control-label"></label>
+
+                    <div class="form-group col-sm-8">
+                        <select asp-for="Travel_Type" class="form-control" asp-items="Html.GetEnumSelectList<TravelOrderCard.Travel_Type>()"></select>
+                        <span asp-validation-for="Travel_Type" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Expenses_Only" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Expenses_Only" />
+                        <span asp-validation-for="Expenses_Only" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Allowance_Only" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Travel_Allowance_Only" />
+                        <span asp-validation-for="Travel_Allowance_Only" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Daily_Allowance_Only" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Daily_Allowance_Only" />
+                        <span asp-validation-for="Daily_Allowance_Only" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Departure_Branch" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Departure_Branch" class="form-control" />
+                        <span asp-validation-for="Departure_Branch" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Depature_Date_AD" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Depature_Date_AD" class="form-control" type="text" readonly />
+                        <span asp-validation-for="Depature_Date_AD" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Arrival_Date_AD" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Arrival_Date_AD" class="form-control" type="text" readonly />
+                        <span asp-validation-for="Arrival_Date_AD" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Destination_I" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Travel_Destination_I" class="form-control" />
+                        <span asp-validation-for="Travel_Destination_I" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Destination_II" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Travel_Destination_II" class="form-control" />
+                        <span asp-validation-for="Travel_Destination_II" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Destination_III" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Travel_Destination_III" class="form-control" />
+                        <span asp-validation-for="Travel_Destination_III" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Reason_for_Travel" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <select asp-for="Reason_for_Travel" class="form-control" asp-items="Html.GetEnumSelectList<TravelOrderCard.Reason_for_Travel>()"></select>
+                        <span asp-validation-for="Reason_for_Travel" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Mode_Of_Transportation" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <select asp-for="Mode_Of_Transportation" class="form-control" asp-items="Html.GetEnumSelectList<TravelOrderCard.Mode_Of_Transportation>()"></select>
+                        <span asp-validation-for="Mode_Of_Transportation" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Mode_Of_Transportation_Others" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Mode_Of_Transportation_Others" class="form-control" />
+                        <span asp-validation-for="Mode_Of_Transportation_Others" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Approved_Type" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <select asp-for="Approved_Type" class="form-control" asp-items="Html.GetEnumSelectList<TravelOrderCard.Approved_Type>()"></select>
+                        <span asp-validation-for="Approved_Type" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Country" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Country" class="form-control" />
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Exchange_Rate" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Exchange_Rate" class="form-control" value="0.00" />
+                        <span asp-validation-for="Exchange_Rate" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Status" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <select asp-for="Travel_Status" class="form-control" disabled asp-items="Html.GetEnumSelectList<TravelOrderCard.Travel_Status>()"></select>
+                        <span asp-validation-for="Travel_Status" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Remarks" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <textarea asp-for="Remarks" class="form-control"></textarea>
+                        <span asp-validation-for="Remarks" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <h5><b>Claimed Details</b></h5>
+            <hr />
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_Local_Transportation" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_Local_Transportation" class="form-control" />
+                        <span asp-validation-for="Claimed_Local_Transportation" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_Fuel" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_Fuel" class="form-control" />
+                        <span asp-validation-for="Claimed_Fuel" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_Other_Expenses" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_Other_Expenses" class="form-control" />
+                        <span asp-validation-for="Claimed_Other_Expenses" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="panel-footer">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-default">Cancel</a>
+        </footer>
+    </form>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="~/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+            $("#Depature_Date_AD, #Arrival_Date_AD").datepicker({
+                startDate: new Date().toLocaleDateString(),
+            });
+        })();
+    </script>
+}

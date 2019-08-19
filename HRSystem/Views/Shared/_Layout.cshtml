@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>@ViewData["Title"] - HR System</title>
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Lib CSS -->
+    <link href="~/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/lib/pnotify/pnotify.custom.css" rel="stylesheet" />
+
+    <!-- Specific Page CSS -->
+    @RenderSection("StyleSheets", required: false)
+
+    <!-- Theme CSS -->
+    <link href="~/css/theme.css" rel="stylesheet" />
+
+    <!-- Skin CSS -->
+    <link href="~/css/skins/default.css" rel="stylesheet" />
+
+    <!-- Theme Custom CSS -->
+    <link href="~/css/theme-custom.css" rel="stylesheet" />
+
+    <!-- Head Libs -->
+    <script src="~/lib/modernizr/modernizr.js"></script>
+</head>
+<body>
+    <section class="body">
+        <!-- start: header -->
+        <header class="header">
+            <div class="logo-container">
+                <a asp-controller="Home" asp-action="Index" class="logo">
+                    <h5>HR System</h5>
+                </a>
+
+                <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+                    <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+                </div>
+            </div>
+
+            <!-- start: user box -->
+            <div class="header-right">
+                <span class="separator"></span>
+
+                <div id="userbox" class="userbox">
+                    <a href="#" data-toggle="dropdown">
+                        <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+                            <span class="name">@User.Identity.Name</span>
+                            <span class="role">@User.Identity.GetUserName()</span>
+                        </div>
+
+                        <i class="fa custom-caret"></i>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <ul class="list-unstyled">
+                            <li class="divider"></li>
+
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="javascript:void(0)"><i class="fa fa-user"></i> My Profile</a>
+                            </li>
+
+                            <li>
+                                <a role="menuitem" tabindex="-1" asp-controller="Account" asp-action="LogOut"><i class="fa fa-power-off"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end: user box -->
+        </header>
+        <!-- end: header -->
+
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <aside id="sidebar-left" class="sidebar-left">
+                <div class="sidebar-header">
+                    <div class="sidebar-title">
+                        Navigation
+                    </div>
+
+                    <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+                        <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+                    </div>
+                </div>
+
+                <div class="nano">
+                    <div class="nano-content">
+                        <nav id="menu" class="nav-main" role="navigation">
+                            <ul class="nav nav-main">
+                                <li>
+                                    <a asp-controller="Home" asp-action="Index">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-parent">
+                                    <a>
+                                        <i class="fa fa-files-o" aria-hidden="true"></i>
+                                        <span>Leave Request Details</span>
+                                    </a>
+
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a asp-controller="LeaveRequest" asp-action="Index">
+                                                <i class="fa fa-file" aria-hidden="true"></i>
+                                                <span>Leave Request</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="PendingLeaveRequest" asp-action="Index">
+                                                <i class="fa fa-file-archive-o" aria-hidden="true"></i>
+                                                <span>Pending Leave Request</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="RecommendedLeaveRequest" asp-action="Index">
+                                                <i class="fa fa-file-code-o" aria-hidden="true"></i>
+                                                <span>Recommended Leave Request</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="ApprovedLeaveRequest" asp-action="Index">
+                                                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                                <span>Approved Leave Request</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-parent">
+                                    <a>
+                                        <i class="fa fa-files-o" aria-hidden="true"></i>
+                                        <span>Travel Order Details</span>
+                                    </a>
+
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a asp-controller="TravelOrder" asp-action="Index">
+                                                <i class="fa fa-plane" aria-hidden="true"></i>
+                                                <span>Travel Order</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="PendingTravelOrder" asp-action="Index">
+                                                <i class="fa fa-file-archive-o" aria-hidden="true"></i>
+                                                <span>Pending Travel Order</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="RecommendedTravelOrder" asp-action="Index">
+                                                <i class="fa fa-file-code-o" aria-hidden="true"></i>
+                                                <span>Recommended Travel Order</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="ApprovedTravelOrder" asp-action="Index">
+                                                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                                <span>Approved Travel Order</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <hr class="separator" />
+                    </div>
+                </div>
+            </aside>
+            <!-- end: sidebar -->
+
+            <section role="main" class="content-body">
+                <header class="page-header">
+                    <h2>@ViewContext.RouteData.Values["controller"].ToString()</h2>
+
+                    <div class="right-wrapper pull-right">
+                        <ol class="breadcrumbs">
+                            <li>
+                                <a asp-controller="Home" asp-action="Index">
+                                    <i class="fa fa-home"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a asp-controller="@ViewContext.RouteData.Values["controller"].ToString()" asp-action="Index">
+                                    @ViewContext.RouteData.Values["controller"].ToString()
+                                </a>
+                            </li>
+
+                            <li>
+                                <span>@ViewContext.RouteData.Values["action"].ToString()</span>
+                            </li>
+                        </ol>
+                    </div>
+                </header>
+
+                <!-- start: page -->
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderBody()
+                    </div>
+                </div>
+                <!-- end: page -->
+            </section>
+        </div>
+
+    </section>
+
+    <!-- Lib -->
+    <script src="~/lib/jquery/jquery-3.4.1.js"></script>
+    <script src="~/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/lib/nanoscroller/nanoscroller.js"></script>
+    <script src="~/lib/pnotify/pnotify.custom.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+            let activeControllerName = "@ViewContext.RouteData.Values["controller"].ToString()";
+            $("#menu a").each(function () {
+                let hrefLink = $(this).attr('href');
+                if (hrefLink != undefined) {
+                    let controllerName = hrefLink.substring(1).split('/')[0];
+                    if (activeControllerName == controllerName) {
+                        $(this).closest('li').addClass('nav-active');
+                        $(this).closest('ul').closest('li').addClass('nav-expanded').addClass('nav-active');
+                    }
+                }
+            });
+
+            @if(TempData["Notify"] == null)
+            {
+                TempData["Notify"] = "false";
+            }
+
+            let notifyDetails = @Html.Raw(TempData["Notify"]);
+            if (notifyDetails instanceof Object) {
+                new PNotify({
+                    title: notifyDetails.title,
+                    text: notifyDetails.text,
+                    type: notifyDetails.type
+                });
+            }
+        })();
+    </script>
+
+    <!-- Specific Page Scripts -->
+    @RenderSection("Scripts", required: false)
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/js/theme.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="~/js/theme.custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/js/theme.init.js"></script>
+</body>
+</html>

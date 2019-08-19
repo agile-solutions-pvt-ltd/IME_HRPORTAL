@@ -1,0 +1,417 @@
+﻿@model PostedTravelOrderViewModel
+
+@{
+    ViewData["Title"] = "Reject Travel Order";
+}
+
+<section class="panel">
+    <form asp-action="RejectRequest">
+        <header class="panel-heading">
+            <h2 class="panel-title">
+                Reject Travel Order
+            </h2>
+        </header>
+
+        <div class="panel-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Key" type="hidden" />
+            <input asp-for="Travel_Order_No" type="hidden" />
+            <h5><b>General Details</b></h5>
+            <hr />
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Employee_No" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Employee_No" class="form-control" readonly />
+                        <span asp-validation-for="Employee_No" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Employee_Name" class="col-sm-4 control-label "></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Employee_Name" class="form-control col-sm-3" readonly />
+                        <span asp-validation-for="Employee_Name" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Designation" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Designation" class="form-control" readonly />
+                        <span asp-validation-for="Designation" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Department" class="col-sm-4 control-label "></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Department" class="form-control col-sm-3" readonly />
+                        <span asp-validation-for="Department" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Type" class="col-sm-4 control-label"></label>
+
+                    <div class="form-group col-sm-8">
+                        <select asp-for="Travel_Type" class="form-control" asp-items="Html.GetEnumSelectList<TravelOrderCard.Travel_Type>()" disabled></select>
+                        <span asp-validation-for="Travel_Type" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Expenses_Only" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Expenses_Only" disabled />
+                        <span asp-validation-for="Expenses_Only" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Allowance_Only" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Travel_Allowance_Only" disabled />
+                        <span asp-validation-for="Travel_Allowance_Only" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Daily_Allowance_Only" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Daily_Allowance_Only" disabled />
+                        <span asp-validation-for="Daily_Allowance_Only" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Departure_Branch" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Departure_Branch" class="form-control" readonly />
+                        <span asp-validation-for="Departure_Branch" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Depature_Date_AD" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Depature_Date_AD" class="form-control" type="text" readonly />
+                        <span asp-validation-for="Depature_Date_AD" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Arrival_Date_AD" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Arrival_Date_AD" class="form-control" type="text" readonly />
+                        <span asp-validation-for="Arrival_Date_AD" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Destination_I" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Travel_Destination_I" class="form-control" readonly />
+                        <span asp-validation-for="Travel_Destination_I" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Destination_II" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Travel_Destination_II" class="form-control" readonly />
+                        <span asp-validation-for="Travel_Destination_II" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Destination_III" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Travel_Destination_III" class="form-control" readonly />
+                        <span asp-validation-for="Travel_Destination_III" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Reason_for_Travel" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <select asp-for="Reason_for_Travel" class="form-control" asp-items="Html.GetEnumSelectList<TravelOrderCard.Reason_for_Travel>()" disabled></select>
+                        <span asp-validation-for="Reason_for_Travel" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Mode_Of_Transportation" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <select asp-for="Mode_Of_Transportation" class="form-control" asp-items="Html.GetEnumSelectList<TravelOrderCard.Mode_Of_Transportation>()" disabled></select>
+                        <span asp-validation-for="Mode_Of_Transportation" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Mode_Of_Transportation_Others" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Mode_Of_Transportation_Others" class="form-control" readonly />
+                        <span asp-validation-for="Mode_Of_Transportation_Others" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Approved_Type" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <select asp-for="Approved_Type" class="form-control" asp-items="Html.GetEnumSelectList<TravelOrderCard.Approved_Type>()" disabled></select>
+                        <span asp-validation-for="Approved_Type" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Country" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Country" class="form-control" readonly />
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Exchange_Rate" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Exchange_Rate" class="form-control" readonly />
+                        <span asp-validation-for="Exchange_Rate" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Status" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <select asp-for="Travel_Status" class="form-control" asp-items="Html.GetEnumSelectList<TravelOrderCard.Travel_Status>()" disabled></select>
+                        <span asp-validation-for="Travel_Status" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Remarks" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <textarea asp-for="Remarks" class="form-control" readonly></textarea>
+                        <span asp-validation-for="Remarks" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <h5><b>Claim Details</b></h5>
+            <hr />
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_TA" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_TA" class="form-control" readonly />
+                        <span asp-validation-for="Claimed_TA" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_DA" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_DA" class="form-control" readonly />
+                        <span asp-validation-for="Claimed_DA" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_TADA" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_TADA" class="form-control" readonly />
+                        <span asp-validation-for="Claimed_TADA" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_Local_Transportation" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_Local_Transportation" class="form-control" readonly />
+                        <span asp-validation-for="Claimed_Local_Transportation" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_Fuel" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_Fuel" class="form-control" readonly />
+                        <span asp-validation-for="Claimed_Fuel" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_Other_Expenses" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_Other_Expenses" class="form-control" readonly />
+                        <span asp-validation-for="Claimed_Other_Expenses" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_Total" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_Total" class="form-control" readonly />
+                        <span asp-validation-for="Claimed_Total" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <h5><b>Approval Details</b></h5>
+            <hr />
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Travel_Allowance" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Travel_Allowance" class="form-control" readonly />
+                        <span asp-validation-for="Travel_Allowance" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Daily_Allowance" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Daily_Allowance" class="form-control" readonly />
+                        <span asp-validation-for="Daily_Allowance" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="TADA_Nrs" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="TADA_Nrs" class="form-control" readonly />
+                        <span asp-validation-for="TADA_Nrs" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Local_Transportation_Nrs" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Local_Transportation_Nrs" class="form-control" readonly />
+                        <span asp-validation-for="Local_Transportation_Nrs" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Fuel_Nrs" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Fuel_Nrs" class="form-control" readonly />
+                        <span asp-validation-for="Fuel_Nrs" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Other_Expenses_Nrs" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Other_Expenses_Nrs" class="form-control" readonly />
+                        <span asp-validation-for="Other_Expenses_Nrs" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Total_Nrs" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Total_Nrs" class="form-control" readonly />
+                        <span asp-validation-for="Total_Nrs" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <h5><b>Rejection Details</b></h5>
+            <hr />
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Rejection_Remarks" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <textarea asp-for="Rejection_Remarks" class="form-control"></textarea>
+                        <span asp-validation-for="Rejection_Remarks" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="panel-footer">
+            <input type="submit" value="Reject" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-default">Cancel</a>
+        </footer>
+    </form>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

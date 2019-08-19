@@ -1,0 +1,99 @@
+﻿@model IEnumerable<LeaveStatus.leavestatus>
+
+@{
+    ViewData["Title"] = "Leave Request";
+}
+
+@section StyleSheets {
+    <link href="~/lib/DataTables/datatables.min.css" rel="stylesheet" />
+}
+
+<section class="panel">
+    <header class="panel-heading">
+        <div class="pull-right">
+            <a asp-action="Submit" class="btn btn-sm btn-primary">
+                Create
+            </a>
+        </div>
+
+        <h2 class="panel-title">
+            Leave Request
+        </h2>
+    </header>
+
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-none" id="tbl_LeaveRequest">
+                <thead>
+                    <tr>
+                        <th>
+                            Leave Request No
+                        </th>
+                        <th>
+                            Leave Description
+                        </th>
+                        <th>
+                            Leave Type Code
+                        </th>
+                        <th>
+                            Leave Start Date
+                        </th>
+                        <th>
+                            Leave End Date
+                        </th>
+                        <th>
+                            Leave Status
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Leave_Request_No)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Leave_Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Leave_Type_Code)
+                            </td>
+                            <td>
+                                @item.Leave_Start_Date.ToShortDateString()
+                            </td>
+                            <td>
+                                @item.Leave_End_Date.ToShortDateString()
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Leave_Status)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/lib/DataTables/datatables.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+
+            'use strict';
+
+            var datatableInit = function () {
+                $('#tbl_LeaveRequest').dataTable({
+                    "order": [[ 0, "desc" ]]
+                });
+            };
+
+            $(function () {
+                datatableInit();
+            });
+
+        })();
+    </script>
+}

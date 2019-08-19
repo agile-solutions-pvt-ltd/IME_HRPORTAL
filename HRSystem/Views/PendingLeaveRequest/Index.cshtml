@@ -1,0 +1,104 @@
+﻿@model IEnumerable<PendingLeaveRequest.pendingleaverequest>
+
+@{
+    ViewData["Title"] = "Pending Leave Requests";
+}
+
+@section StyleSheets {
+    <link href="~/lib/DataTables/datatables.min.css" rel="stylesheet" />
+}
+
+<section class="panel">
+    <header class="panel-heading">
+        <h2 class="panel-title">
+            Pending Leave Requests
+        </h2>
+    </header>
+
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-none" id="tbl_PendingLeaveRequest">
+                <thead>
+                    <tr>
+                        <th>
+                            Employee No
+                        </th>
+                        <th>
+                            Full Name
+                        </th>
+                        <th>
+                            Leave Type Code
+                        </th>
+                        <th>
+                            Leave Start Date
+                        </th>
+                        <th>
+                            Leave End Date
+                        </th>
+                        <th>
+                            Leave Request No
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee_No)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Full_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Leave_Type_Code)
+                            </td>
+                            <td>
+                                @item.Leave_Start_Date.ToShortDateString()
+                            </td>
+                            <td>
+                                @item.Leave_End_Date.ToShortDateString()
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Leave_Request_No)
+                            </td>
+                            <td class="actions">
+                                <a title="Recommend" data-toggle="tooltip" asp-action="RecommendRequest" asp-route-leaveRequestNo="@item.Leave_Request_No">
+                                    <i class="fa fa-check-circle-o"></i>
+                                </a>
+
+                                <a title="Reject" data-toggle="tooltip" asp-action="RejectRequest" asp-route-leaveRequestNo="@item.Leave_Request_No">
+                                    <i class="fa fa-ban"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <script src="~/lib/DataTables/datatables.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+
+            'use strict';
+
+            var datatableInit = function () {
+                $('#tbl_PendingLeaveRequest').dataTable();
+            };
+
+            $(function () {
+                datatableInit();
+            });
+
+        })();
+    </script>
+}
