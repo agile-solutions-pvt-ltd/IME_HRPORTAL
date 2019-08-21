@@ -92,14 +92,6 @@
                         <span asp-validation-for="Substitute_Employee_No" class="text-danger"></span>
                     </div>
                 </div>
-
-                @*<div class="col-sm-6">
-                        <div class="form-group">
-                            <label asp-for="Substitute_Employee_Name" class="control-label"></label>
-                            <input asp-for="Substitute_Employee_Name" class="form-control" />
-                            <span asp-validation-for="Substitute_Employee_Name" class="text-danger"></span>
-                        </div>
-                    </div>*@
             </div>
 
             <div class="row">
@@ -126,11 +118,6 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script type="text/javascript">
         (function () {
-            //$("#Substitute_Employee_No").on('change', function (e) {
-            //    let fullName = $(this).find(':selected').data('fullname');
-            //    $("#Substitute_Employee_Name").val(fullName);
-            //})
-
             $("#Substitute_Employee_No").select2({
                 placeholder: "Select Substitute Employee",
                 allowClear: true

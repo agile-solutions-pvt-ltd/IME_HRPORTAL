@@ -63,6 +63,7 @@ namespace HRSystem.API
             BasicHttpBinding basicHttpBinding = new BasicHttpBinding();
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
+            basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
 
             Config config = ConfigJSON.Read();
 
@@ -173,12 +174,13 @@ namespace HRSystem.API
             try
             {
                 integrationservice_Filter[] filter = new integrationservice_Filter[0];
-                List<integrationservice> result = Integrationservice_PortClientService()
+                var oldResult = Integrationservice_PortClientService()
                     .ReadMultipleAsync(filter, "", 0)
                     .GetAwaiter()
-                    .GetResult()
-                    .ReadMultiple_Result1
-                    .ToList();
+                    .GetResult();
+
+                var newResult = oldResult.ReadMultiple_Result1;
+                var result = newResult.ToList();
 
                 Config config = ConfigJSON.Read();
 

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<PendingSalaryAdvance.pendingsalaryadvance>
+
+@{
+    ViewData["Title"] = "Pending Salary Advances";
+}
+
+@section StyleSheets {
+    <link href="~/lib/DataTables/datatables.min.css" rel="stylesheet" />
+}
+
+<section class="panel">
+    <header class="panel-heading">
+        <h2 class="panel-title">
+            Pending Salary Advances
+        </h2>
+    </header>
+
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-none" id="tbl_PendingSalaryAdvance">
+                <thead>
+                    <tr>
+                        <th>
+                            Employee No
+                        </th>
+                        <th>
+                            Employee Name
+                        </th>
+                        <th>
+                            Claimed Amount
+                        </th>
+                        <th>
+                            Requested Date
+                        </th>
+                        <th>
+                            Posted By
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee_No)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Claimed_Amount)
+                            </td>
+                            <td>
+                                @item.Requested_Date.ToShortDateString()
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Posted_by)
+                            </td>
+                            <td class="actions">
+                                <a title="Recommend" data-toggle="tooltip" asp-action="RecommendRequest" asp-route-salaryAdvanceNo="@item.No">
+                                    <i class="fa fa-check-circle-o"></i>
+                                </a>
+
+                                <a title="Reject" data-toggle="tooltip" asp-action="RejectRequest" asp-route-salaryAdvanceNo="@item.No">
+                                    <i class="fa fa-ban"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <script src="~/lib/DataTables/datatables.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+
+            'use strict';
+
+            var datatableInit = function () {
+                $('#tbl_PendingSalaryAdvance').dataTable();
+            };
+
+            $(function () {
+                datatableInit();
+            });
+
+        })();
+    </script>
+}

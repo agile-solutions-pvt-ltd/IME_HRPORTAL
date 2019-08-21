@@ -3,16 +3,19 @@
   "Version": "15.0.30515.712",
   "ExtendedData": {
     "inputs": [
-      "http://110.34.3.177:4047/MOBAPP/WS/Test%20Company/Codeunit/hrmgt"
+      "http://110.34.3.177:4047/MOBAPP/WS/Test%20Company/Page/pendingsalaryadvance"
     ],
     "collectionTypes": [
       "System.Array",
       "System.Collections.Generic.Dictionary`2"
     ],
     "namespaceMappings": [
-      "*, HRMgmt"
+      "*, PendingSalaryAdvance"
     ],
     "references": [
+      "AutoMapper, {AutoMapper, 8.1.1}",
+      "AutoMapper.Extensions.Microsoft.DependencyInjection, {AutoMapper.Extensions.Microsoft.DependencyInjection, 6.1.1}",
+      "dotnet-aspnet-codegenerator-design, {Microsoft.VisualStudio.Web.CodeGeneration.Design, 2.2.3}",
       "Microsoft.AspNetCore, {Microsoft.AspNetCore, 2.2.0}",
       "Microsoft.AspNetCore.Antiforgery, {Microsoft.AspNetCore.Antiforgery, 2.2.0}",
       "Microsoft.AspNetCore.Authentication, {Microsoft.AspNetCore.Authentication, 2.2.0}",
@@ -108,7 +111,9 @@
       "Microsoft.AspNetCore.WebUtilities, {Microsoft.AspNetCore.WebUtilities, 2.2.0}",
       "Microsoft.CodeAnalysis, {Microsoft.CodeAnalysis.Common, 2.8.0}",
       "Microsoft.CodeAnalysis.CSharp, {Microsoft.CodeAnalysis.CSharp, 2.8.0}",
+      "Microsoft.CodeAnalysis.CSharp.Workspaces, {Microsoft.CodeAnalysis.CSharp.Workspaces, 2.8.0}",
       "Microsoft.CodeAnalysis.Razor, {Microsoft.CodeAnalysis.Razor, 2.2.0}",
+      "Microsoft.CodeAnalysis.Workspaces, {Microsoft.CodeAnalysis.Workspaces.Common, 2.8.0}",
       "Microsoft.CSharp, {Microsoft.NETCore.App, 2.2.0}",
       "Microsoft.DotNet.PlatformAbstractions, {Microsoft.DotNet.PlatformAbstractions, 2.1.0}",
       "Microsoft.EntityFrameworkCore, {Microsoft.EntityFrameworkCore, 2.2.0}",
@@ -172,12 +177,20 @@
       "Microsoft.IdentityModel.Xml, {Microsoft.IdentityModel.Xml, 5.3.0}",
       "Microsoft.Net.Http.Headers, {Microsoft.Net.Http.Headers, 2.2.0}",
       "Microsoft.VisualBasic, {Microsoft.NETCore.App, 2.2.0}",
+      "Microsoft.VisualStudio.Web.CodeGeneration, {Microsoft.VisualStudio.Web.CodeGeneration, 2.2.3}",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Contracts, {Microsoft.VisualStudio.Web.CodeGeneration.Contracts, 2.2.3}",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Core, {Microsoft.VisualStudio.Web.CodeGeneration.Core, 2.2.3}",
+      "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore, {Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore, 2.2.3}",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Templating, {Microsoft.VisualStudio.Web.CodeGeneration.Templating, 2.2.3}",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Utils, {Microsoft.VisualStudio.Web.CodeGeneration.Utils, 2.2.3}",
+      "Microsoft.VisualStudio.Web.CodeGenerators.Mvc, {Microsoft.VisualStudio.Web.CodeGenerators.Mvc, 2.2.3}",
       "Microsoft.Win32.Primitives, {Microsoft.NETCore.App, 2.2.0}",
       "Microsoft.Win32.Registry, {Microsoft.Win32.Registry, 4.5.0}",
       "mscorlib, {Microsoft.NETCore.App, 2.2.0}",
       "netstandard, {Microsoft.NETCore.App, 2.2.0}",
       "Newtonsoft.Json, {Newtonsoft.Json, 11.0.2}",
       "Newtonsoft.Json.Bson, {Newtonsoft.Json.Bson, 1.0.1}",
+      "NuGet.Frameworks, {NuGet.Frameworks, 4.7.0}",
       "Remotion.Linq, {Remotion.Linq, 2.2.0}",
       "System, {Microsoft.NETCore.App, 2.2.0}",
       "System.AppContext, {Microsoft.NETCore.App, 2.2.0}",
@@ -193,6 +206,11 @@
       "System.ComponentModel.EventBasedAsync, {Microsoft.NETCore.App, 2.2.0}",
       "System.ComponentModel.Primitives, {Microsoft.NETCore.App, 2.2.0}",
       "System.ComponentModel.TypeConverter, {Microsoft.NETCore.App, 2.2.0}",
+      "System.Composition.AttributedModel, {System.Composition.AttributedModel, 1.0.31}",
+      "System.Composition.Convention, {System.Composition.Convention, 1.0.31}",
+      "System.Composition.Hosting, {System.Composition.Hosting, 1.0.31}",
+      "System.Composition.Runtime, {System.Composition.Runtime, 1.0.31}",
+      "System.Composition.TypedParts, {System.Composition.TypedParts, 1.0.31}",
       "System.Configuration, {Microsoft.NETCore.App, 2.2.0}",
       "System.Console, {Microsoft.NETCore.App, 2.2.0}",
       "System.Core, {Microsoft.NETCore.App, 2.2.0}",

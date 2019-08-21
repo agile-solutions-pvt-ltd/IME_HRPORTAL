@@ -10,13 +10,13 @@ using HRSystem.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using PendingTravelOrder;
-using PostedTravelOrderCard;
+using PendingSalaryAdvance;
+using PostedSalaryAdvance;
 
 namespace HRSystem.Controllers
 {
     [Authorize]
-    public class PendingTravelOrderController : Controller
+    public class PendingSalaryAdvanceController : Controller
     {
         private readonly IMapper _mapper;
 
@@ -24,14 +24,14 @@ namespace HRSystem.Controllers
         readonly Config config = ConfigJSON.Read();
         readonly NetworkCredential credential = new NetworkCredential();
 
-        public PendingTravelOrderController(IMapper mapper)
+        public PendingSalaryAdvanceController(IMapper mapper)
         {
             _mapper = mapper;
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
         }
 
-        private pendingtravelorder_PortClient Pendingtravelorder_PortClientService()
+        private pendingsalaryadvance_PortClient Pendingsalaryadvance_PortClientService()
         {
             credential.UserName = User.Identity.GetUserName();
             credential.Password = User.Identity.GetPassword();
@@ -40,7 +40,7 @@ namespace HRSystem.Controllers
             config.Default_Config.Company_Name = User.Identity.GetCompanyName();
 
             var integrationService = config.Integration_Services
-                .Where(x => x.Integration_Type == "Pending_Travel" && x.Company_Name == config.Default_Config.Company_Name)
+                .Where(x => x.Integration_Type == "Pending_Salary" && x.Company_Name == config.Default_Config.Company_Name)
                 .FirstOrDefault();
 
             config.Default_Config.Type = integrationService.Type;
@@ -49,14 +49,14 @@ namespace HRSystem.Controllers
 
             EndpointAddress endpoint = new EndpointAddress(URL);
 
-            var client = new pendingtravelorder_PortClient(basicHttpBinding, endpoint);
+            var client = new pendingsalaryadvance_PortClient(basicHttpBinding, endpoint);
             client.ClientCredentials.Windows.ClientCredential = credential;
             client.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Impersonation;
 
             return client;
         }
 
-        private postedtravelordercard_PortClient Postedtravelordercard_PortClientService()
+        private postedsalaryadvancecard_PortClient Postedsalaryadvancecard_PortClientService()
         {
             credential.UserName = User.Identity.GetUserName();
             credential.Password = User.Identity.GetPassword();
@@ -65,7 +65,7 @@ namespace HRSystem.Controllers
             config.Default_Config.Company_Name = User.Identity.GetCompanyName();
 
             var integrationService = config.Integration_Services
-                .Where(x => x.Integration_Type == "Posted_Travel" && x.Company_Name == config.Default_Config.Company_Name)
+                .Where(x => x.Integration_Type == "Posted_Salary_Advance" && x.Company_Name == config.Default_Config.Company_Name)
                 .FirstOrDefault();
 
             config.Default_Config.Type = integrationService.Type;
@@ -74,7 +74,7 @@ namespace HRSystem.Controllers
 
             EndpointAddress endpoint = new EndpointAddress(URL);
 
-            var client = new postedtravelordercard_PortClient(basicHttpBinding, endpoint);
+            var client = new postedsalaryadvancecard_PortClient(basicHttpBinding, endpoint);
             client.ClientCredentials.Windows.ClientCredential = credential;
             client.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Impersonation;
 
@@ -108,11 +108,11 @@ namespace HRSystem.Controllers
 
         public IActionResult Index()
         {
-            List<pendingtravelorder> result = new List<pendingtravelorder>();
+            List<pendingsalaryadvance> result = new List<pendingsalaryadvance>();
             try
             {
-                pendingtravelorder_Filter[] filter = new pendingtravelorder_Filter[0];
-                result = Pendingtravelorder_PortClientService()
+                pendingsalaryadvance_Filter[] filter = new pendingsalaryadvance_Filter[0];
+                result = Pendingsalaryadvance_PortClientService()
                     .ReadMultipleAsync(filter, "", 0)
                     .GetAwaiter()
                     .GetResult()
@@ -126,28 +126,28 @@ namespace HRSystem.Controllers
             return View(result);
         }
 
-        public IActionResult RecommendRequest(string travelOrderNo)
+        public IActionResult RecommendRequest(string salaryAdvanceNo)
         {
-            PostedTravelOrderViewModel vmObj = new PostedTravelOrderViewModel();
+            PostedSalaryAdvanceViewModel vmObj = new PostedSalaryAdvanceViewModel();
             try
             {
-                postedtravelordercard obj = new postedtravelordercard();
-                postedtravelordercard_Filter[] filter = {
-                    new postedtravelordercard_Filter
+                postedsalaryadvancecard obj = new postedsalaryadvancecard();
+                postedsalaryadvancecard_Filter[] filter = {
+                    new postedsalaryadvancecard_Filter
                     {
-                        Field = postedtravelordercard_Fields.Travel_Order_No,
-                        Criteria = travelOrderNo
+                        Field = postedsalaryadvancecard_Fields.No,
+                        Criteria = salaryAdvanceNo
                     }
                 };
 
-                obj = Postedtravelordercard_PortClientService()
+                obj = Postedsalaryadvancecard_PortClientService()
                     .ReadMultipleAsync(filter, "", 1)
                     .GetAwaiter()
                     .GetResult()
                     .ReadMultiple_Result1
                     .FirstOrDefault();
 
-                vmObj = _mapper.Map<PostedTravelOrderViewModel>(obj);
+                vmObj = _mapper.Map<PostedSalaryAdvanceViewModel>(obj);
             }
             catch (Exception ex)
             {
@@ -157,86 +157,87 @@ namespace HRSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult RecommendRequest(PostedTravelOrderViewModel vmObj)
+        public IActionResult RecommendRequest(PostedSalaryAdvanceViewModel vmObj)
         {
             try
             {
-                ModelState.Remove("Rejection_Remarks");
+                ModelState.Remove("Reason_for_Rejection");
                 if (ModelState.IsValid)
                 {
-                    var obj = _mapper.Map<postedtravelordercard>(vmObj);
-                    obj.Local_Transportation_NrsSpecified = true;
-                    obj.Fuel_NrsSpecified = true;
-                    obj.Other_Expenses_NrsSpecified = true;
+                    var obj = _mapper.Map<postedsalaryadvancecard>(vmObj);
+                    obj.Approved_AmountSpecified = true;
+                    obj.No_of_MonthsSpecified = true;
+                    obj.Fixed_Deduction_in_SalarySpecified = true;
+                    obj.Employee_Name = null;
 
                     Update updateObj = new Update
                     {
-                        postedtravelordercard = obj
+                        postedsalaryadvancecard = obj
                     };
 
-                    var result = Postedtravelordercard_PortClientService()
+                    var result = Postedsalaryadvancecard_PortClientService()
                         .UpdateAsync(updateObj)
                         .GetAwaiter()
                         .GetResult()
-                        .postedtravelordercard;
+                        .postedsalaryadvancecard;
 
-                    if(result != null)
+                    if (result != null)
                     {
                         var postResult = Hrmgt_PortClientService()
-                        .RecommendtravelorderewebAsync(result.Travel_Order_No)
+                        .RecommendsalaryadvancewebAsync(result.No)
                         .GetAwaiter()
                         .GetResult()
                         .return_value;
 
                         if (postResult == 200)
                         {
-                            TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Recommend Travel Order", text = "Travel Request recommended successfully.", type = "success" });
+                            TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Recommend Salary Advance", text = "Salary advance recommended successfully.", type = "success" });
                             return RedirectToAction(nameof(Index));
                         }
                         else
                         {
-                            TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Recommend Travel Order", text = "Updating travel order succeeded but posting recommendation failed.", type = "error" });
+                            TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Recommend Salary Advance", text = "Updating salary advance succeeded but posting recommendation failed.", type = "error" });
                         }
                     }
                     else
                     {
-                        TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Recommend Travel Order", text = "Updating travel order fields failed.", type = "error" });
+                        TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Recommend Salary Advance", text = "Updating salary advance fields failed.", type = "error" });
                     }
                 }
                 else
                 {
-                    TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Recommend Travel Order", text = "Validation Error. Try Again.", type = "error" });
+                    TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Recommend Salary Advance", text = "Validation Error. Try Again.", type = "error" });
                 }
             }
             catch (Exception ex)
             {
                 TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Exception Error", text = ex.Message, type = "error" });
             }
-            return RedirectToAction(nameof(RecommendRequest), new { travelOrderNo = vmObj.Travel_Order_No });
+            return RedirectToAction(nameof(RecommendRequest), new { salaryAdvanceNo = vmObj.No });
         }
 
-        public IActionResult RejectRequest(string travelOrderNo)
+        public IActionResult RejectRequest(string salaryAdvanceNo)
         {
-            PostedTravelOrderViewModel vmObj = new PostedTravelOrderViewModel();
+            PostedSalaryAdvanceViewModel vmObj = new PostedSalaryAdvanceViewModel();
             try
             {
-                postedtravelordercard obj = new postedtravelordercard();
-                postedtravelordercard_Filter[] filter = {
-                    new postedtravelordercard_Filter
+                postedsalaryadvancecard obj = new postedsalaryadvancecard();
+                postedsalaryadvancecard_Filter[] filter = {
+                    new postedsalaryadvancecard_Filter
                     {
-                        Field = postedtravelordercard_Fields.Travel_Order_No,
-                        Criteria = travelOrderNo
+                        Field = postedsalaryadvancecard_Fields.No,
+                        Criteria = salaryAdvanceNo
                     }
                 };
 
-                obj = Postedtravelordercard_PortClientService()
+                obj = Postedsalaryadvancecard_PortClientService()
                     .ReadMultipleAsync(filter, "", 1)
                     .GetAwaiter()
                     .GetResult()
                     .ReadMultiple_Result1
                     .FirstOrDefault();
 
-                vmObj = _mapper.Map<PostedTravelOrderViewModel>(obj);
+                vmObj = _mapper.Map<PostedSalaryAdvanceViewModel>(obj);
             }
             catch (Exception ex)
             {
@@ -246,56 +247,60 @@ namespace HRSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult RejectRequest(PostedTravelOrderViewModel vmObj)
+        public IActionResult RejectRequest(PostedSalaryAdvanceViewModel vmObj)
         {
             try
             {
+                ModelState.Remove("Approved_Amount");
+                ModelState.Remove("No_of_Months");
+                ModelState.Remove("Fixed_Deduction_in_Salary");
                 if (ModelState.IsValid)
                 {
-                    var obj = _mapper.Map<postedtravelordercard>(vmObj);
-                    Update updateObj = new Update {
-                        postedtravelordercard = obj
+                    var obj = _mapper.Map<postedsalaryadvancecard>(vmObj);
+                    Update updateObj = new Update
+                    {
+                        postedsalaryadvancecard = obj
                     };
 
-                    var result = Postedtravelordercard_PortClientService()
+                    var result = Postedsalaryadvancecard_PortClientService()
                         .UpdateAsync(updateObj)
                         .GetAwaiter()
                         .GetResult()
-                        .postedtravelordercard;
+                        .postedsalaryadvancecard;
 
                     if (result != null)
                     {
                         var postResult = Hrmgt_PortClientService()
-                            .RejecttravelorderwebAsync(result.Travel_Order_No)
+                            .RejectsalaryadvancewebAsync(result.No)
                             .GetAwaiter()
                             .GetResult()
                             .return_value;
 
                         if (postResult == 200)
                         {
-                            TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Reject Travel Order", text = "Travel Request rejected successfully.", type = "success" });
+                            TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Reject Salary Advance", text = "Salary advance rejected successfully.", type = "success" });
                             return RedirectToAction(nameof(Index));
                         }
                         else
                         {
-                            TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Reject Travel Order", text = "Reject details saved but rejection failed.", type = "error" });
+                            TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Reject Salary Advance", text = "Reject details saved but rejection failed.", type = "error" });
                         }
                     }
                     else
                     {
-                        TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Reject Travel Order", text = "Posting reject details failed.", type = "error" });
+                        TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Reject Salary Advance", text = "Posting reject details failed.", type = "error" });
                     }
                 }
                 else
                 {
-                    TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Reject Travel Order", text = "Validation Error. Try Again.", type = "error" });
+                    TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Reject Salary Advance", text = "Validation Error. Try Again.", type = "error" });
                 }
             }
             catch (Exception ex)
             {
                 TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Exception Error", text = ex.Message, type = "error" });
             }
-            return RedirectToAction(nameof(RejectRequest), new { travelOrderNo = vmObj.Travel_Order_No });
+            return RedirectToAction(nameof(RejectRequest), new { salaryAdvanceNo = vmObj.No });
         }
     }
 }

@@ -11,7 +11,7 @@ namespace HRMgmt
 {
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", ConfigurationName="HRMgmt.hrmgt_Port")]
     public interface hrmgt_Port
     {
@@ -132,6 +132,10 @@ namespace HRMgmt
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.Recommendsalaryadvanceweb_Result> RecommendsalaryadvancewebAsync(HRMgmt.Recommendsalaryadvanceweb request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:Verifysalaryadvanceweb", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<HRMgmt.Verifysalaryadvanceweb_Result> VerifysalaryadvancewebAsync(HRMgmt.Verifysalaryadvanceweb request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:Approvesalaryadvanceweb", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.Approvesalaryadvanceweb_Result> ApprovesalaryadvancewebAsync(HRMgmt.Approvesalaryadvanceweb request);
@@ -180,6 +184,12 @@ namespace HRMgmt
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.Printsalaryslipweb_Result> PrintsalaryslipwebAsync(HRMgmt.Printsalaryslipweb request);
         
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:Getapplicablesalaryadvamountandmont" +
+            "hlydeductionweb", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb_Result> GetapplicablesalaryadvamountandmonthlydeductionwebAsync(HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:ApproveAuthority", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.ApproveAuthority_Result> ApproveAuthorityAsync(HRMgmt.ApproveAuthority request);
@@ -190,7 +200,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CalculateTotalDays", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CalculateTotalDays
@@ -220,7 +230,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CalculateTotalDays_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CalculateTotalDays_Result
@@ -240,7 +250,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="FilterPendingLeaveRecords", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class FilterPendingLeaveRecords
@@ -252,7 +262,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="FilterPendingLeaveRecords_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class FilterPendingLeaveRecords_Result
@@ -272,7 +282,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeeName", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class GetEmployeeName
@@ -292,7 +302,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeeName_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class GetEmployeeName_Result
@@ -312,7 +322,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="SendMail", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class SendMail
@@ -352,7 +362,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="SendMail_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class SendMail_Result
@@ -372,7 +382,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="FilterEmployeeList", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class FilterEmployeeList
@@ -384,7 +394,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="FilterEmployeeList_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class FilterEmployeeList_Result
@@ -396,7 +406,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetNAVLoginID", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class GetNAVLoginID
@@ -416,7 +426,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetNAVLoginID_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class GetNAVLoginID_Result
@@ -436,7 +446,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="AllowModifyEmployee", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class AllowModifyEmployee
@@ -448,7 +458,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="AllowModifyEmployee_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class AllowModifyEmployee_Result
@@ -468,7 +478,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CountNonWorkingDays", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CountNonWorkingDays
@@ -498,7 +508,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CountNonWorkingDays_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CountNonWorkingDays_Result
@@ -518,7 +528,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetMonthFilter", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class GetMonthFilter
     {
@@ -543,7 +553,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetMonthFilter_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class GetMonthFilter_Result
     {
@@ -568,7 +578,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="AllowTrainingLineDelete", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class AllowTrainingLineDelete
@@ -588,7 +598,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="AllowTrainingLineDelete_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class AllowTrainingLineDelete_Result
@@ -600,7 +610,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="PayrollControl", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class PayrollControl
@@ -612,7 +622,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="PayrollControl_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class PayrollControl_Result
@@ -624,7 +634,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CreateTravelSettlement", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CreateTravelSettlement
@@ -644,7 +654,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CreateTravelSettlement_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CreateTravelSettlement_Result
@@ -656,7 +666,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CalculateAdvanceAmount", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CalculateAdvanceAmount
@@ -676,7 +686,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CalculateAdvanceAmount_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CalculateAdvanceAmount_Result
@@ -688,7 +698,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="OpenTravelOderRemit", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class OpenTravelOderRemit
     {
@@ -707,7 +717,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="OpenTravelOderRemit_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class OpenTravelOderRemit_Result
     {
@@ -726,7 +736,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CalulateTADARemit", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CalulateTADARemit
     {
@@ -753,7 +763,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CalulateTADARemit_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CalulateTADARemit_Result
     {
@@ -780,7 +790,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetMonthStartEndDate", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class GetMonthStartEndDate
     {
@@ -813,7 +823,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetMonthStartEndDate_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class GetMonthStartEndDate_Result
     {
@@ -838,7 +848,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="UploadFileHRPolicies", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class UploadFileHRPolicies
     {
@@ -857,7 +867,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="UploadFileHRPolicies_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class UploadFileHRPolicies_Result
     {
@@ -876,7 +886,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="ExportHRPolicies", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class ExportHRPolicies
@@ -900,7 +910,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="ExportHRPolicies_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class ExportHRPolicies_Result
@@ -920,7 +930,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="SendMailTravelVoucher", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class SendMailTravelVoucher
     {
@@ -955,7 +965,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="SendMailTravelVoucher_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class SendMailTravelVoucher_Result
     {
@@ -990,7 +1000,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CheckForMultipleLeave", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CheckForMultipleLeave
     {
@@ -1013,7 +1023,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CheckForMultipleLeave_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class CheckForMultipleLeave_Result
     {
@@ -1036,7 +1046,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="InsertAppraisalForm", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class InsertAppraisalForm
     {
@@ -1055,7 +1065,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="InsertAppraisalForm_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class InsertAppraisalForm_Result
     {
@@ -1074,7 +1084,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Recommendleaverequestweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Recommendleaverequestweb
@@ -1094,7 +1104,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Recommendleaverequestweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Recommendleaverequestweb_Result
@@ -1114,7 +1124,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Postleaverequestweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Postleaverequestweb
@@ -1134,7 +1144,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Postleaverequestweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Postleaverequestweb_Result
@@ -1154,7 +1164,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Approveleaverequestweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Approveleaverequestweb
@@ -1174,7 +1184,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Approveleaverequestweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Approveleaverequestweb_Result
@@ -1194,7 +1204,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Rejectleaverequestweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Rejectleaverequestweb
@@ -1214,7 +1224,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Rejectleaverequestweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Rejectleaverequestweb_Result
@@ -1234,7 +1244,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Postsalaryadvanceweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Postsalaryadvanceweb
@@ -1254,7 +1264,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Postsalaryadvanceweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Postsalaryadvanceweb_Result
@@ -1274,7 +1284,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Recommendsalaryadvanceweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Recommendsalaryadvanceweb
@@ -1294,7 +1304,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Recommendsalaryadvanceweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Recommendsalaryadvanceweb_Result
@@ -1314,7 +1324,47 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Verifysalaryadvanceweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class Verifysalaryadvanceweb
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string documentNo;
+        
+        public Verifysalaryadvanceweb()
+        {
+        }
+        
+        public Verifysalaryadvanceweb(string documentNo)
+        {
+            this.documentNo = documentNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Verifysalaryadvanceweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class Verifysalaryadvanceweb_Result
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public int return_value;
+        
+        public Verifysalaryadvanceweb_Result()
+        {
+        }
+        
+        public Verifysalaryadvanceweb_Result(int return_value)
+        {
+            this.return_value = return_value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Approvesalaryadvanceweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Approvesalaryadvanceweb
@@ -1334,7 +1384,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Approvesalaryadvanceweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Approvesalaryadvanceweb_Result
@@ -1354,7 +1404,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Rejectsalaryadvanceweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Rejectsalaryadvanceweb
@@ -1374,7 +1424,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Rejectsalaryadvanceweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Rejectsalaryadvanceweb_Result
@@ -1394,7 +1444,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Applogin", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Applogin
@@ -1414,7 +1464,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Applogin_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Applogin_Result
@@ -1434,7 +1484,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Posttravelorderweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Posttravelorderweb
@@ -1454,7 +1504,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Posttravelorderweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Posttravelorderweb_Result
@@ -1474,7 +1524,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Recommendtravelordereweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Recommendtravelordereweb
@@ -1494,7 +1544,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Recommendtravelordereweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Recommendtravelordereweb_Result
@@ -1514,7 +1564,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Approvetravelorderweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Approvetravelorderweb
@@ -1534,7 +1584,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Approvetravelorderweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Approvetravelorderweb_Result
@@ -1554,7 +1604,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Rejecttravelorderweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Rejecttravelorderweb
@@ -1574,7 +1624,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Rejecttravelorderweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Rejecttravelorderweb_Result
@@ -1594,7 +1644,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Posttravelvoucherweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Posttravelvoucherweb
@@ -1614,7 +1664,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Posttravelvoucherweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Posttravelvoucherweb_Result
@@ -1634,7 +1684,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Recommendtravelvoucherweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Recommendtravelvoucherweb
@@ -1654,7 +1704,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Recommendtravelvoucherweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Recommendtravelvoucherweb_Result
@@ -1674,7 +1724,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Approvetravelvoucherweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Approvetravelvoucherweb
@@ -1694,7 +1744,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Approvetravelvoucherweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Approvetravelvoucherweb_Result
@@ -1714,7 +1764,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Rejecttravelvoucherweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Rejecttravelvoucherweb
@@ -1734,7 +1784,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Rejecttravelvoucherweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Rejecttravelvoucherweb_Result
@@ -1754,7 +1804,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Printsalaryslipweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Printsalaryslipweb
@@ -1782,7 +1832,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Printsalaryslipweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Printsalaryslipweb_Result
@@ -1802,7 +1852,57 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Getapplicablesalaryadvamountandmonthlydeductionweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class Getapplicablesalaryadvamountandmonthlydeductionweb
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string employeeNo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=1)]
+        public decimal applicableAmt;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=2)]
+        public decimal monthlyDeduction;
+        
+        public Getapplicablesalaryadvamountandmonthlydeductionweb()
+        {
+        }
+        
+        public Getapplicablesalaryadvamountandmonthlydeductionweb(string employeeNo, decimal applicableAmt, decimal monthlyDeduction)
+        {
+            this.employeeNo = employeeNo;
+            this.applicableAmt = applicableAmt;
+            this.monthlyDeduction = monthlyDeduction;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Getapplicablesalaryadvamountandmonthlydeductionweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class Getapplicablesalaryadvamountandmonthlydeductionweb_Result
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public decimal applicableAmt;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=1)]
+        public decimal monthlyDeduction;
+        
+        public Getapplicablesalaryadvamountandmonthlydeductionweb_Result()
+        {
+        }
+        
+        public Getapplicablesalaryadvamountandmonthlydeductionweb_Result(decimal applicableAmt, decimal monthlyDeduction)
+        {
+            this.applicableAmt = applicableAmt;
+            this.monthlyDeduction = monthlyDeduction;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="ApproveAuthority", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class ApproveAuthority
@@ -1830,7 +1930,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="ApproveAuthority_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class ApproveAuthority_Result
@@ -1842,7 +1942,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateInLeaveAccount", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class UpdateInLeaveAccount
@@ -1870,7 +1970,7 @@ namespace HRMgmt
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateInLeaveAccount_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class UpdateInLeaveAccount_Result
@@ -1881,13 +1981,13 @@ namespace HRMgmt
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     public interface hrmgt_PortChannel : HRMgmt.hrmgt_Port, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     public partial class hrmgt_PortClient : System.ServiceModel.ClientBase<HRMgmt.hrmgt_Port>, HRMgmt.hrmgt_Port
     {
         
@@ -2225,6 +2325,19 @@ namespace HRMgmt
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HRMgmt.Verifysalaryadvanceweb_Result> HRMgmt.hrmgt_Port.VerifysalaryadvancewebAsync(HRMgmt.Verifysalaryadvanceweb request)
+        {
+            return base.Channel.VerifysalaryadvancewebAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HRMgmt.Verifysalaryadvanceweb_Result> VerifysalaryadvancewebAsync(string documentNo)
+        {
+            HRMgmt.Verifysalaryadvanceweb inValue = new HRMgmt.Verifysalaryadvanceweb();
+            inValue.documentNo = documentNo;
+            return ((HRMgmt.hrmgt_Port)(this)).VerifysalaryadvancewebAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<HRMgmt.Approvesalaryadvanceweb_Result> HRMgmt.hrmgt_Port.ApprovesalaryadvancewebAsync(HRMgmt.Approvesalaryadvanceweb request)
         {
             return base.Channel.ApprovesalaryadvancewebAsync(request);
@@ -2380,6 +2493,11 @@ namespace HRMgmt
             inValue.irregular = irregular;
             inValue.employeeNo = employeeNo;
             return ((HRMgmt.hrmgt_Port)(this)).PrintsalaryslipwebAsync(inValue);
+        }
+        
+        public System.Threading.Tasks.Task<HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb_Result> GetapplicablesalaryadvamountandmonthlydeductionwebAsync(HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb request)
+        {
+            return base.Channel.GetapplicablesalaryadvamountandmonthlydeductionwebAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

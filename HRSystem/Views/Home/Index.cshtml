@@ -1,7 +1,99 @@
-﻿@{
+﻿@model HomeViewModel
+
+@{
     ViewData["Title"] = "Home Page";
+    ViewData["RightSidebarID"] = "sidebar-right";
+}
+
+@section StyleSheets {
+    <link href="~/lib/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .text-white {
+            color: white;
+        }
+    </style>
+}
+
+@section CalendarEvents {
+    <aside id="sidebar-right" class="sidebar-right">
+        <div class="nano">
+            <div class="nano-content">
+                <a href="#" class="mobile-close visible-xs">
+                    Collapse
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+
+                <div class="sidebar-right-wrapper">
+                    <div class="sidebar-widget widget-calendar">
+                        <h6>Calendar Events</h6>
+                        <div id="calendar" class="text-white" ></div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget widget-friends">
+                    <h6>Events</h6>
+                    <ul id="list_Events"></ul>
+                </div>
+            </div>
+        </div>
+    </aside>
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 </div>
+
+@section Scripts {
+    <script src="~/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            let calendarEvents = @Html.Raw(Json.Serialize(Model.CalendarEvents));
+            let calendarEventDates = [];
+            let eventList = [];
+
+            if (calendarEvents instanceof Array) {
+                calendarEvents.forEach(function (value) {
+                    let calendarObj = {
+                        Date: new Date(value.date),
+                        Description: value.description,
+                    }
+                    calendarEventDates.push(calendarObj);
+                });
+            }
+
+            $("#calendar").datepicker({
+                beforeShowDay: function (date) {
+                    let eventDetails = calendarEventDates.find(x => x.Date.toLocaleDateString() == date.toLocaleDateString());
+                    if (eventDetails != undefined) {
+                        return {
+                            classes: "text-bold bg-danger",
+                            tooltip: eventDetails.Description
+                        }
+                    }
+                }
+            }).on('changeMonth', function (e) {
+                UpdateEventList(e.date);
+            }).on('changeDate', function (e) {
+                UpdateEventList(e.date);
+            });
+
+            function UpdateEventList(currentDate) {
+                let htmls = '';
+                let currentMonth = currentDate.getMonth();
+                let currentYear = currentDate.getYear();
+
+                calendarEventDates.forEach(function (value) {
+                    if (currentMonth == value.Date.getMonth() && currentYear == value.Date.getYear()) {
+                        htmls += `<li>
+                                    <div class="profile-info">
+                                        <span class="name">${value.Description}</span>
+                                        <span class="title">${value.Date.toLocaleDateString()}</span>
+                                    </div>
+                                </li>`;
+                    }
+                });
+                $("#list_Events").html(htmls);
+            }
+        })();
+    </script>
+}

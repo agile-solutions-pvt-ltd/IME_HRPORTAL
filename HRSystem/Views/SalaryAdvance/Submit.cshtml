@@ -1,0 +1,88 @@
+﻿@model SalaryAdvanceViewModel
+
+@{
+    ViewData["Title"] = "Submit Salary Advance";
+}
+
+<section class="panel">
+    <form asp-action="Submit">
+        <header class="panel-heading">
+            <h2 class="panel-title">
+                Submit Salary Advance
+            </h2>
+        </header>
+
+        <div class="panel-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Employee_No" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Employee_No" class="form-control" readonly value="@User.Identity.GetEmployeeNo()" />
+                        <span asp-validation-for="Employee_No" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Employee_Name" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Employee_Name" class="form-control" readonly value="@User.Identity.Name" />
+                        <span asp-validation-for="Employee_Name" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Applicable_Amount" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Applicable_Amount" class="form-control" readonly />
+                        <span asp-validation-for="Applicable_Amount" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Monthly_Deduction" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Monthly_Deduction" class="form-control" readonly />
+                        <span asp-validation-for="Monthly_Deduction" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label asp-for="Claimed_Amount" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <input asp-for="Claimed_Amount" class="form-control" />
+                        <span asp-validation-for="Claimed_Amount" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <label asp-for="Reason_For_Advance" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <textarea asp-for="Reason_For_Advance" class="form-control"></textarea>
+                        <span asp-validation-for="Reason_For_Advance" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="panel-footer">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-default">Cancel</a>
+        </footer>
+    </form>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

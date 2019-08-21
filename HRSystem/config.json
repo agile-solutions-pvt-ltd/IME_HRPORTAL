@@ -490,195 +490,255 @@
     },
     {
       "Integration_Type": "Pending_Salary",
-      "Service_Name": "postedsalaryadvancecard",
+      "Service_Name": "pendingsalaryadvance",
       "Type": "Page",
       "Company_Name": "Ashok LT Engineering Services"
     },
     {
       "Integration_Type": "Pending_Salary",
-      "Service_Name": "postedsalaryadvancecard",
+      "Service_Name": "pendingsalaryadvance",
       "Type": "Page",
       "Company_Name": "IME Automotives Pvt. Ltd."
     },
     {
       "Integration_Type": "Pending_Salary",
-      "Service_Name": "postedsalaryadvancecard",
+      "Service_Name": "pendingsalaryadvance",
       "Type": "Page",
       "Company_Name": "IME MOTORS PVT. LTD."
     },
     {
       "Integration_Type": "Pending_Salary",
+      "Service_Name": "pendingsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Recommended_Salary",
+      "Service_Name": "recommendedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Recommended_Salary",
+      "Service_Name": "recommendedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Recommended_Salary",
+      "Service_Name": "recommendedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Recommended_Salary",
+      "Service_Name": "recommendedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Verified_Salary",
+      "Service_Name": "verifiedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Verified_Salary",
+      "Service_Name": "verifiedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Verified_Salary",
+      "Service_Name": "verifiedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Verified_Salary",
+      "Service_Name": "verifiedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Approved_Salary",
+      "Service_Name": "approvedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Approved_Salary",
+      "Service_Name": "approvedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Approved_Salary",
+      "Service_Name": "approvedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Approved_Salary",
+      "Service_Name": "approvedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Approved_Salary",
+      "Service_Name": "approvedsalaryadvance",
+      "Type": "Page",
+      "Company_Name": "Venture Hire Purchase Pvt. Ltd"
+    },
+    {
+      "Integration_Type": "Salary_Status",
+      "Service_Name": "salaryadvancestatus",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Salary_Status",
+      "Service_Name": "salaryadvancestatus",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Salary_Status",
+      "Service_Name": "salaryadvancestatus",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Salary_Status",
+      "Service_Name": "salaryadvancestatus",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Pending_Travel_Voucher",
+      "Service_Name": "travelvoucher",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Pending_Travel_Voucher",
+      "Service_Name": "travelvoucher",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Pending_Travel_Voucher",
+      "Service_Name": "travelvoucher",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Pending_Travel_Voucher",
+      "Service_Name": "travelvoucher",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Recommended_Travel_Voucher",
+      "Service_Name": "postedtravelvouchercard",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Recommended_Travel_Voucher",
+      "Service_Name": "postedtravelvouchercard",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Recommended_Travel_Voucher",
+      "Service_Name": "postedtravelvouchercard",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Recommended_Travel_Voucher",
+      "Service_Name": "postedtravelvouchercard",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Verified_Travel_Voucher",
+      "Service_Name": "pendingtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Verified_Travel_Voucher",
+      "Service_Name": "pendingtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Verified_Travel_Voucher",
+      "Service_Name": "pendingtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Verified_Travel_Voucher",
+      "Service_Name": "pendingtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Approved_Travel_Voucher",
+      "Service_Name": "recommendedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Approved_Travel_Voucher",
+      "Service_Name": "recommendedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Approved_Travel_Voucher",
+      "Service_Name": "recommendedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Approved_Travel_Voucher",
+      "Service_Name": "recommendedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Posted_Salary_Advance",
+      "Service_Name": "postedsalaryadvancecard",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Posted_Salary_Advance",
+      "Service_Name": "postedsalaryadvancecard",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Posted_Salary_Advance",
+      "Service_Name": "postedsalaryadvancecard",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Posted_Salary_Advance",
       "Service_Name": "postedsalaryadvancecard",
       "Type": "Page",
       "Company_Name": "Test Company"
     },
     {
-      "Integration_Type": "Recommended_Salary",
-      "Service_Name": "pendingsalaryadvance",
+      "Integration_Type": "Posted_Salary_Advance",
+      "Service_Name": "postedsalaryadvancecard",
       "Type": "Page",
-      "Company_Name": "Ashok LT Engineering Services"
-    },
-    {
-      "Integration_Type": "Recommended_Salary",
-      "Service_Name": "pendingsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "IME Automotives Pvt. Ltd."
-    },
-    {
-      "Integration_Type": "Recommended_Salary",
-      "Service_Name": "pendingsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "IME MOTORS PVT. LTD."
-    },
-    {
-      "Integration_Type": "Recommended_Salary",
-      "Service_Name": "pendingsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "Test Company"
-    },
-    {
-      "Integration_Type": "Verified_Salary",
-      "Service_Name": "recommendedsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "Ashok LT Engineering Services"
-    },
-    {
-      "Integration_Type": "Verified_Salary",
-      "Service_Name": "recommendedsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "IME Automotives Pvt. Ltd."
-    },
-    {
-      "Integration_Type": "Verified_Salary",
-      "Service_Name": "recommendedsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "IME MOTORS PVT. LTD."
-    },
-    {
-      "Integration_Type": "Verified_Salary",
-      "Service_Name": "recommendedsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "Test Company"
-    },
-    {
-      "Integration_Type": "Salary_Status",
-      "Service_Name": "approvedsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "Ashok LT Engineering Services"
-    },
-    {
-      "Integration_Type": "Salary_Status",
-      "Service_Name": "approvedsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "IME Automotives Pvt. Ltd."
-    },
-    {
-      "Integration_Type": "Salary_Status",
-      "Service_Name": "approvedsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "IME MOTORS PVT. LTD."
-    },
-    {
-      "Integration_Type": "Salary_Status",
-      "Service_Name": "approvedsalaryadvance",
-      "Type": "Page",
-      "Company_Name": "Test Company"
-    },
-    {
-      "Integration_Type": "Pending_Travel_Voucher",
-      "Service_Name": "travelvoucher",
-      "Type": "Page",
-      "Company_Name": "Ashok LT Engineering Services"
-    },
-    {
-      "Integration_Type": "Pending_Travel_Voucher",
-      "Service_Name": "travelvoucher",
-      "Type": "Page",
-      "Company_Name": "IME Automotives Pvt. Ltd."
-    },
-    {
-      "Integration_Type": "Pending_Travel_Voucher",
-      "Service_Name": "travelvoucher",
-      "Type": "Page",
-      "Company_Name": "IME MOTORS PVT. LTD."
-    },
-    {
-      "Integration_Type": "Pending_Travel_Voucher",
-      "Service_Name": "travelvoucher",
-      "Type": "Page",
-      "Company_Name": "Test Company"
-    },
-    {
-      "Integration_Type": "Recommended_Travel_Voucher",
-      "Service_Name": "postedtravelvouchercard",
-      "Type": "Page",
-      "Company_Name": "Ashok LT Engineering Services"
-    },
-    {
-      "Integration_Type": "Recommended_Travel_Voucher",
-      "Service_Name": "postedtravelvouchercard",
-      "Type": "Page",
-      "Company_Name": "IME Automotives Pvt. Ltd."
-    },
-    {
-      "Integration_Type": "Recommended_Travel_Voucher",
-      "Service_Name": "postedtravelvouchercard",
-      "Type": "Page",
-      "Company_Name": "IME MOTORS PVT. LTD."
-    },
-    {
-      "Integration_Type": "Recommended_Travel_Voucher",
-      "Service_Name": "postedtravelvouchercard",
-      "Type": "Page",
-      "Company_Name": "Test Company"
-    },
-    {
-      "Integration_Type": "Verified_Travel_Voucher",
-      "Service_Name": "pendingtravelvoucher",
-      "Type": "Page",
-      "Company_Name": "Ashok LT Engineering Services"
-    },
-    {
-      "Integration_Type": "Verified_Travel_Voucher",
-      "Service_Name": "pendingtravelvoucher",
-      "Type": "Page",
-      "Company_Name": "IME Automotives Pvt. Ltd."
-    },
-    {
-      "Integration_Type": "Verified_Travel_Voucher",
-      "Service_Name": "pendingtravelvoucher",
-      "Type": "Page",
-      "Company_Name": "IME MOTORS PVT. LTD."
-    },
-    {
-      "Integration_Type": "Verified_Travel_Voucher",
-      "Service_Name": "pendingtravelvoucher",
-      "Type": "Page",
-      "Company_Name": "Test Company"
-    },
-    {
-      "Integration_Type": "Approved_Travel_Voucher",
-      "Service_Name": "recommendedtravelvoucher",
-      "Type": "Page",
-      "Company_Name": "Ashok LT Engineering Services"
-    },
-    {
-      "Integration_Type": "Approved_Travel_Voucher",
-      "Service_Name": "recommendedtravelvoucher",
-      "Type": "Page",
-      "Company_Name": "IME Automotives Pvt. Ltd."
-    },
-    {
-      "Integration_Type": "Approved_Travel_Voucher",
-      "Service_Name": "recommendedtravelvoucher",
-      "Type": "Page",
-      "Company_Name": "IME MOTORS PVT. LTD."
-    },
-    {
-      "Integration_Type": "Approved_Travel_Voucher",
-      "Service_Name": "recommendedtravelvoucher",
-      "Type": "Page",
-      "Company_Name": "Test Company"
+      "Company_Name": "Venture Hire Purchase Pvt. Ltd"
     }
   ],
   "URL": "http://110.34.3.177:4047/MOBAPP/WS/Test Company/Page/"

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ApprovedSalaryAdvance.approvedsalaryadvance>
+
+@{
+    ViewData["Title"] = "Approved Salary Advances";
+}
+
+@section StyleSheets {
+    <link href="~/lib/DataTables/datatables.min.css" rel="stylesheet" />
+}
+
+<section class="panel">
+    <header class="panel-heading">
+        <h2 class="panel-title">
+            Approved Salary Advances
+        </h2>
+    </header>
+
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-none" id="tbl_ApprovedSalaryAdvance">
+                <thead>
+                    <tr>
+                        <th>
+                            Employee No
+                        </th>
+                        <th>
+                            Employee Name
+                        </th>
+                        <th>
+                            Claimed Amount
+                        </th>
+                        <th>
+                            Requested Date
+                        </th>
+                        <th>
+                            Posted By
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee_No)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Claimed_Amount)
+                            </td>
+                            <td>
+                                @item.Requested_Date.ToShortDateString()
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Posted_by)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <script src="~/lib/DataTables/datatables.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+
+            'use strict';
+
+            var datatableInit = function () {
+                $('#tbl_ApprovedSalaryAdvance').dataTable();
+            };
+
+            $(function () {
+                datatableInit();
+            });
+
+        })();
+    </script>
+}

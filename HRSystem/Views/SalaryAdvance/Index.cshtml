@@ -1,0 +1,93 @@
+﻿@model  IEnumerable<SalaryAdvanceStatus.salaryadvancestatus>
+
+@{
+    ViewData["Title"] = "Salary Advances";
+}
+
+@section StyleSheets {
+    <link href="~/lib/DataTables/datatables.min.css" rel="stylesheet" />
+}
+
+<section class="panel">
+    <header class="panel-heading">
+        <div class="pull-right">
+            <a asp-action="Submit" class="btn btn-sm btn-primary">
+                Create
+            </a>
+        </div>
+
+        <h2 class="panel-title">
+            Salary Advances
+        </h2>
+    </header>
+
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-none" id="tbl_SalaryAdvances">
+                <thead>
+                    <tr>
+                        <th>
+                            No.
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            Claimed Amount
+                        </th>
+                        <th>
+                            Applicable Amount
+                        </th>
+                        <th>
+                            Monthly Deduction
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.No)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Claimed_Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Applicable_Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Monthly_Deduction)
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/lib/DataTables/datatables.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+
+            'use strict';
+
+            var datatableInit = function () {
+                $('#tbl_SalaryAdvances').dataTable({
+                    "order": [[ 0, "desc" ]]
+                });
+            };
+
+            $(function () {
+                datatableInit();
+            });
+
+        })();
+    </script>
+}
