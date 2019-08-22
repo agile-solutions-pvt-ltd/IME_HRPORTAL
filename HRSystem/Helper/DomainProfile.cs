@@ -20,6 +20,10 @@ namespace HRSystem.Helper
             CreateMap<SalaryAdvanceViewModel, SalaryAdvanceRequest.salaryadvancerequest>();
             CreateMap<PostedSalaryAdvance.postedsalaryadvancecard, PostedSalaryAdvanceViewModel>();
             CreateMap<PostedSalaryAdvanceViewModel, PostedSalaryAdvance.postedsalaryadvancecard>();
+
+            CreateMap<TravelVoucherViewModel, TravelVoucher.travelvoucher>();
+            CreateMap<PostedTravelVoucherCard.postedtravelvouchercard, PostedTravelVoucherViewModel>();
+            CreateMap<PostedTravelVoucherViewModel, PostedTravelVoucherCard.postedtravelvouchercard>();
         }
     }
 }

@@ -298,25 +298,25 @@
     },
     {
       "Integration_Type": "Leave_Balance",
-      "Service_Name": null,
+      "Service_Name": "leavebalance",
       "Type": "Page",
       "Company_Name": "Ashok LT Engineering Services"
     },
     {
       "Integration_Type": "Leave_Balance",
-      "Service_Name": null,
+      "Service_Name": "leavebalance",
       "Type": "Page",
       "Company_Name": "IME Automotives Pvt. Ltd."
     },
     {
       "Integration_Type": "Leave_Balance",
-      "Service_Name": null,
+      "Service_Name": "leavebalance",
       "Type": "Page",
       "Company_Name": "IME MOTORS PVT. LTD."
     },
     {
       "Integration_Type": "Leave_Balance",
-      "Service_Name": null,
+      "Service_Name": "leavebalance",
       "Type": "Page",
       "Company_Name": "Test Company"
     },
@@ -615,100 +615,160 @@
       "Company_Name": "Test Company"
     },
     {
-      "Integration_Type": "Pending_Travel_Voucher",
+      "Integration_Type": "Travel_Voucher",
       "Service_Name": "travelvoucher",
       "Type": "Page",
       "Company_Name": "Ashok LT Engineering Services"
     },
     {
-      "Integration_Type": "Pending_Travel_Voucher",
+      "Integration_Type": "Travel_Voucher",
       "Service_Name": "travelvoucher",
       "Type": "Page",
       "Company_Name": "IME Automotives Pvt. Ltd."
     },
     {
-      "Integration_Type": "Pending_Travel_Voucher",
+      "Integration_Type": "Travel_Voucher",
       "Service_Name": "travelvoucher",
       "Type": "Page",
       "Company_Name": "IME MOTORS PVT. LTD."
     },
     {
-      "Integration_Type": "Pending_Travel_Voucher",
+      "Integration_Type": "Travel_Voucher",
       "Service_Name": "travelvoucher",
       "Type": "Page",
       "Company_Name": "Test Company"
     },
     {
-      "Integration_Type": "Recommended_Travel_Voucher",
-      "Service_Name": "postedtravelvouchercard",
+      "Integration_Type": "Travel_Voucher",
+      "Service_Name": "travelvoucher",
       "Type": "Page",
-      "Company_Name": "Ashok LT Engineering Services"
+      "Company_Name": "Venture Hire Purchase Pvt. Ltd"
     },
     {
-      "Integration_Type": "Recommended_Travel_Voucher",
-      "Service_Name": "postedtravelvouchercard",
-      "Type": "Page",
-      "Company_Name": "IME Automotives Pvt. Ltd."
-    },
-    {
-      "Integration_Type": "Recommended_Travel_Voucher",
-      "Service_Name": "postedtravelvouchercard",
-      "Type": "Page",
-      "Company_Name": "IME MOTORS PVT. LTD."
-    },
-    {
-      "Integration_Type": "Recommended_Travel_Voucher",
-      "Service_Name": "postedtravelvouchercard",
-      "Type": "Page",
-      "Company_Name": "Test Company"
-    },
-    {
-      "Integration_Type": "Verified_Travel_Voucher",
+      "Integration_Type": "Pending_Travel_Voucher",
       "Service_Name": "pendingtravelvoucher",
       "Type": "Page",
       "Company_Name": "Ashok LT Engineering Services"
     },
     {
-      "Integration_Type": "Verified_Travel_Voucher",
+      "Integration_Type": "Pending_Travel_Voucher",
       "Service_Name": "pendingtravelvoucher",
       "Type": "Page",
       "Company_Name": "IME Automotives Pvt. Ltd."
     },
     {
-      "Integration_Type": "Verified_Travel_Voucher",
+      "Integration_Type": "Pending_Travel_Voucher",
       "Service_Name": "pendingtravelvoucher",
       "Type": "Page",
       "Company_Name": "IME MOTORS PVT. LTD."
     },
     {
-      "Integration_Type": "Verified_Travel_Voucher",
+      "Integration_Type": "Pending_Travel_Voucher",
       "Service_Name": "pendingtravelvoucher",
       "Type": "Page",
       "Company_Name": "Test Company"
     },
     {
-      "Integration_Type": "Approved_Travel_Voucher",
+      "Integration_Type": "Recommended_Travel_Voucher",
       "Service_Name": "recommendedtravelvoucher",
       "Type": "Page",
       "Company_Name": "Ashok LT Engineering Services"
     },
     {
-      "Integration_Type": "Approved_Travel_Voucher",
+      "Integration_Type": "Recommended_Travel_Voucher",
       "Service_Name": "recommendedtravelvoucher",
       "Type": "Page",
       "Company_Name": "IME Automotives Pvt. Ltd."
     },
     {
-      "Integration_Type": "Approved_Travel_Voucher",
+      "Integration_Type": "Recommended_Travel_Voucher",
       "Service_Name": "recommendedtravelvoucher",
       "Type": "Page",
       "Company_Name": "IME MOTORS PVT. LTD."
     },
     {
-      "Integration_Type": "Approved_Travel_Voucher",
+      "Integration_Type": "Recommended_Travel_Voucher",
       "Service_Name": "recommendedtravelvoucher",
       "Type": "Page",
       "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Verified_Travel_Voucher",
+      "Service_Name": "verifiedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Verified_Travel_Voucher",
+      "Service_Name": "verifiedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Verified_Travel_Voucher",
+      "Service_Name": "verifiedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Verified_Travel_Voucher",
+      "Service_Name": "verifiedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Approved_Travel_Voucher",
+      "Service_Name": "approvedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Approved_Travel_Voucher",
+      "Service_Name": "approvedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Approved_Travel_Voucher",
+      "Service_Name": "approvedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Approved_Travel_Voucher",
+      "Service_Name": "approvedtravelvoucher",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Travel_Voucher_Status",
+      "Service_Name": "travelvoucherstatus",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Travel_Voucher_Status",
+      "Service_Name": "travelvoucherstatus",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Travel_Voucher_Status",
+      "Service_Name": "travelvoucherstatus",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Travel_Voucher_Status",
+      "Service_Name": "travelvoucherstatus",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Travel_Voucher_Status",
+      "Service_Name": "travelvoucherstatus",
+      "Type": "Page",
+      "Company_Name": "Venture Hire Purchase Pvt. Ltd"
     },
     {
       "Integration_Type": "Posted_Salary_Advance",
@@ -737,6 +797,36 @@
     {
       "Integration_Type": "Posted_Salary_Advance",
       "Service_Name": "postedsalaryadvancecard",
+      "Type": "Page",
+      "Company_Name": "Venture Hire Purchase Pvt. Ltd"
+    },
+    {
+      "Integration_Type": "Posted_Travel_Voucher",
+      "Service_Name": "postedtravelvouchercard",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "Posted_Travel_Voucher",
+      "Service_Name": "postedtravelvouchercard",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "Posted_Travel_Voucher",
+      "Service_Name": "postedtravelvouchercard",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "Posted_Travel_Voucher",
+      "Service_Name": "postedtravelvouchercard",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "Posted_Travel_Voucher",
+      "Service_Name": "postedtravelvouchercard",
       "Type": "Page",
       "Company_Name": "Venture Hire Purchase Pvt. Ltd"
     }

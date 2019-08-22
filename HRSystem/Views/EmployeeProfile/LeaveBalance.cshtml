@@ -1,0 +1,39 @@
+﻿@model IEnumerable<LeaveBalance.leavebalance>
+
+<section class="panel">
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-none" id="tbl_LeaveBalance">
+                <thead>
+                    <tr>
+                        <th>
+                            Leave Type
+                        </th>
+                        <th>
+                            Leave Description
+                        </th>
+                        <th>
+                            Balance Days
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Leave_Type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Leave_Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Balance_Days)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

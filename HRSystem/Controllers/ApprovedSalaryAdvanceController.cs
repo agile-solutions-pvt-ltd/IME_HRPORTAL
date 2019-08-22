@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.ServiceModel;
-using System.Threading.Tasks;
 using ApprovedSalaryAdvance;
 using HRSystem.Helper;
 using HRSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace HRSystem.Controllers
 {
+    [Authorize]
     public class ApprovedSalaryAdvanceController : Controller
     {
         readonly BasicHttpBinding basicHttpBinding = new BasicHttpBinding();
@@ -22,6 +23,7 @@ namespace HRSystem.Controllers
         {
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
+            basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
         }
 
         private approvedsalaryadvance_PortClient Approvedsalaryadvance_PortClientService()

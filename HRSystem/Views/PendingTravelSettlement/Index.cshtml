@@ -1,0 +1,99 @@
+﻿@model IEnumerable<PendingTravelVoucher.pendingtravelvoucher>
+
+@{
+    ViewData["Title"] = "Pending Travel Settlements";
+}
+
+@section StyleSheets {
+    <link href="~/lib/DataTables/datatables.min.css" rel="stylesheet" />
+}
+
+<section class="panel">
+    <header class="panel-heading">
+        <h2 class="panel-title">
+            Pending Travel Settlement
+        </h2>
+    </header>
+
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-none" id="tbl_PendingTravelSettlement">
+                <thead>
+                    <tr>
+                        <th>
+                            Travel Order No
+                        </th>
+                        <th>
+                            Employee No
+                        </th>
+                        <th>
+                            Employee Name
+                        </th>
+                        <th>
+                            Departure Date
+                        </th>
+                        <th>
+                            Arrival Date
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Travel_Order_Form_No)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Travelrs_ID_No)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Travelers_Name)
+                            </td>
+                            <td>
+                                @item.Depature_Date_AD.ToShortDateString()
+                            </td>
+                            <td>
+                                @item.Arrival_Date_AD.ToShortDateString()
+                            </td>
+                            <td class="actions">
+                                <a title="Recommend" data-toggle="tooltip" asp-action="RecommendRequest" asp-route-travelOrderNo="@item.Travel_Order_Form_No">
+                                    <i class="fa fa-check-circle-o"></i>
+                                </a>
+
+                                <a title="Reject" data-toggle="tooltip" asp-action="RejectRequest" asp-route-travelOrderNo="@item.Travel_Order_Form_No">
+                                    <i class="fa fa-ban"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/lib/DataTables/datatables.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+
+            'use strict';
+
+            var datatableInit = function () {
+                $('#tbl_PendingTravelSettlement').dataTable({
+                    "order": [[0, "desc"]]
+                });
+            };
+
+            $(function () {
+                datatableInit();
+            });
+
+        })();
+    </script>
+}

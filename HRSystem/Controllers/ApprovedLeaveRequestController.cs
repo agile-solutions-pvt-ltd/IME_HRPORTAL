@@ -23,6 +23,7 @@ namespace HRSystem.Controllers
         {
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
+            basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
         }
 
         private approvedleaverequest_PortClient Approvedleaverequest_PortClientService()

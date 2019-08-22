@@ -172,6 +172,10 @@ namespace HRMgmt
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.Recommendtravelvoucherweb_Result> RecommendtravelvoucherwebAsync(HRMgmt.Recommendtravelvoucherweb request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:Verifytravelvoucherweb", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<HRMgmt.Verifytravelvoucherweb_Result> VerifytravelvoucherwebAsync(HRMgmt.Verifytravelvoucherweb request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:Approvetravelvoucherweb", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.Approvetravelvoucherweb_Result> ApprovetravelvoucherwebAsync(HRMgmt.Approvetravelvoucherweb request);
@@ -189,6 +193,11 @@ namespace HRMgmt
             "hlydeductionweb", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb_Result> GetapplicablesalaryadvamountandmonthlydeductionwebAsync(HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:GetEmployeePicture", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<HRMgmt.GetEmployeePicture_Result> GetEmployeePictureAsync(HRMgmt.GetEmployeePicture request);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:ApproveAuthority", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1726,6 +1735,46 @@ namespace HRMgmt
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Verifytravelvoucherweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class Verifytravelvoucherweb
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string documentNo;
+        
+        public Verifytravelvoucherweb()
+        {
+        }
+        
+        public Verifytravelvoucherweb(string documentNo)
+        {
+            this.documentNo = documentNo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Verifytravelvoucherweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class Verifytravelvoucherweb_Result
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public int return_value;
+        
+        public Verifytravelvoucherweb_Result()
+        {
+        }
+        
+        public Verifytravelvoucherweb_Result(int return_value)
+        {
+            this.return_value = return_value;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Approvetravelvoucherweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Approvetravelvoucherweb
     {
@@ -1898,6 +1947,48 @@ namespace HRMgmt
         {
             this.applicableAmt = applicableAmt;
             this.monthlyDeduction = monthlyDeduction;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeePicture", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class GetEmployeePicture
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string empNo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=1)]
+        public string picture;
+        
+        public GetEmployeePicture()
+        {
+        }
+        
+        public GetEmployeePicture(string empNo, string picture)
+        {
+            this.empNo = empNo;
+            this.picture = picture;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeePicture_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class GetEmployeePicture_Result
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string picture;
+        
+        public GetEmployeePicture_Result()
+        {
+        }
+        
+        public GetEmployeePicture_Result(string picture)
+        {
+            this.picture = picture;
         }
     }
     
@@ -2455,6 +2546,19 @@ namespace HRMgmt
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HRMgmt.Verifytravelvoucherweb_Result> HRMgmt.hrmgt_Port.VerifytravelvoucherwebAsync(HRMgmt.Verifytravelvoucherweb request)
+        {
+            return base.Channel.VerifytravelvoucherwebAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HRMgmt.Verifytravelvoucherweb_Result> VerifytravelvoucherwebAsync(string documentNo)
+        {
+            HRMgmt.Verifytravelvoucherweb inValue = new HRMgmt.Verifytravelvoucherweb();
+            inValue.documentNo = documentNo;
+            return ((HRMgmt.hrmgt_Port)(this)).VerifytravelvoucherwebAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<HRMgmt.Approvetravelvoucherweb_Result> HRMgmt.hrmgt_Port.ApprovetravelvoucherwebAsync(HRMgmt.Approvetravelvoucherweb request)
         {
             return base.Channel.ApprovetravelvoucherwebAsync(request);
@@ -2498,6 +2602,11 @@ namespace HRMgmt
         public System.Threading.Tasks.Task<HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb_Result> GetapplicablesalaryadvamountandmonthlydeductionwebAsync(HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb request)
         {
             return base.Channel.GetapplicablesalaryadvamountandmonthlydeductionwebAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HRMgmt.GetEmployeePicture_Result> GetEmployeePictureAsync(HRMgmt.GetEmployeePicture request)
+        {
+            return base.Channel.GetEmployeePictureAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

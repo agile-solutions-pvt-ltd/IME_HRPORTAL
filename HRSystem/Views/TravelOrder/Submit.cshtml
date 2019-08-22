@@ -271,8 +271,16 @@
 
     <script type="text/javascript">
         (function () {
-            $("#Depature_Date_AD, #Arrival_Date_AD").datepicker({
-                startDate: new Date().toLocaleDateString(),
+            $("#Depature_Date_AD").datepicker({
+                startDate: new Date(),
+            }).on('changeDate', function (e) {
+                $("#Arrival_Date_AD").datepicker('setStartDate', e.date);
+            });
+
+            $("#Arrival_Date_AD").datepicker({
+                startDate: new Date(),
+            }).on('changeDate', function (e) {
+                $("#Depature_Date_AD").datepicker('setEndDate', e.date);
             });
         })();
     </script>

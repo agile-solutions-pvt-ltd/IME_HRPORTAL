@@ -35,6 +35,9 @@
                         <th>
                             Travel Type
                         </th>
+                        <th>
+                            Action
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,6 +58,11 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Travel_Type)
+                            </td>
+                            <td class="actions">
+                                <a class="btn btn-sm btn-default" asp-action="SubmitSettlement" asp-route-travelOrderNo="@item.Travel_Order_No">
+                                    Create Settlement
+                                </a>
                             </td>
                         </tr>
                     }

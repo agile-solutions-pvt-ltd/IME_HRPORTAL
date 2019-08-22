@@ -1,0 +1,99 @@
+﻿@model IEnumerable<TravelVoucherStatus.travelvoucherstatus>
+
+@{
+    ViewData["Title"] = "Travel Settlements";
+}
+
+@section StyleSheets {
+    <link href="~/lib/DataTables/datatables.min.css" rel="stylesheet" />
+}
+
+<section>
+    <header class="panel-heading">
+        <h2 class="panel-title">
+            Travel Settlement
+        </h2>
+    </header>
+
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-none" id="tbl_TravelSettlement">
+                <thead>
+                    <tr>
+                        <th>
+                            Travel Order No
+                        </th>
+                        <th>
+                            Departure Date
+                        </th>
+                        <th>
+                            Arrival Date
+                        </th>
+                        <th>
+                            Approved Date
+                        </th>
+                        <th>
+                            Recommended Date
+                        </th>
+                        <th>
+                            Verified Date
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Travel_Order_Form_No)
+                            </td>
+                            <td>
+                                @item.Depature_Date_AD.ToShortDateString()
+                            </td>
+                            <td>
+                                @item.Arrival_Date_AD.ToShortDateString()
+                            </td>
+                            <td>
+                                @((item.Approved_Date != DateTime.MinValue) ? item.Approved_Date.ToShortDateString() : "")
+                            </td>
+                            <td>
+                                @((item.Recommended_Date != DateTime.MinValue) ? item.Recommended_Date.ToShortDateString() : "")
+                            </td>
+                            <td>
+                                @((item.Verfied_Date != DateTime.MinValue) ? item.Verfied_Date.ToShortDateString() : "")
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/lib/DataTables/datatables.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+
+            'use strict';
+
+            var datatableInit = function () {
+                $('#tbl_TravelSettlement').dataTable({
+                    "order": [[0, "desc"]]
+                });
+            };
+
+            $(function () {
+                datatableInit();
+            });
+
+        })();
+    </script>
+}

@@ -1,4 +1,4 @@
-﻿@model EmployeeCard.employeecard
+﻿@model EmployeeProfileViewModel
 
 @{
     ViewData["Title"] = "Employee Profile";
@@ -15,128 +15,23 @@
 </div>
 
 <div class="col-md-8 col-lg-9">
-    <section class="panel">
-        <div class="panel-body">
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label asp-for="No" class="col-sm-4 control-label">ID</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="No" class="form-control" readonly />
-                        <span asp-validation-for="No" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label asp-for="Full_Name" class="col-sm-4 control-label">Name</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Full_Name" class="form-control col-sm-3" readonly />
-                        <span asp-validation-for="Full_Name" class="text-danger"></span>
-                    </div>
-                </div>
+    <div class="tabs">
+        <ul class="nav nav-tabs tabs-primary">
+            <li class="active">
+                <a href="#Profile" data-toggle="tab">Profile</a>
+            </li>
+            <li>
+                <a href="#LeaveBalance" data-toggle="tab">Leave Balance</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="Profile" class="tab-pane active">
+                <partial name="Profile" model="Model.EmployeeCard" />
             </div>
 
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label asp-for="Birth_Date" class="col-sm-4 control-label">Birth Date</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Birth_Date" class="form-control" type="date" readonly />
-                        <span asp-validation-for="Birth_Date" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label asp-for="Branch_Name" class="col-sm-4 control-label">Branch</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Branch_Name" class="form-control col-sm-3" readonly />
-                        <span asp-validation-for="Branch_Name" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label asp-for="Department_Name" class="col-sm-4 control-label">Department</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Department_Name" class="form-control" readonly />
-                        <span asp-validation-for="Department_Name" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label asp-for="Job_Title" class="col-sm-4 control-label">Job Title</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Job_Title" class="form-control col-sm-3" readonly />
-                        <span asp-validation-for="Job_Title" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label asp-for="Employee_Type" class="col-sm-4 control-label">Type</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Employee_Type" class="form-control" readonly />
-                        <span asp-validation-for="Employee_Type" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label asp-for="Employment_Date" class="col-sm-4 control-label">Employment Date</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Employment_Date" class="form-control col-sm-3" type="date" readonly />
-                        <span asp-validation-for="Employment_Date" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label asp-for="Mediical_Insurance_Limit" class="col-sm-4 control-label">Medical Insurance</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Mediical_Insurance_Limit" class="form-control" readonly />
-                        <span asp-validation-for="Mediical_Insurance_Limit" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label asp-for="Accidental_Insurance_Limit" class="col-sm-4 control-label">Accidental Insurance</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Accidental_Insurance_Limit" class="form-control col-sm-3" readonly />
-                        <span asp-validation-for="Accidental_Insurance_Limit" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label asp-for="Bank_Name" class="col-sm-4 control-label">Bank Name</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Bank_Name" class="form-control" readonly />
-                        <span asp-validation-for="Bank_Name" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label asp-for="Bank_Account_No" class="col-sm-4 control-label">Account No</label>
-
-                    <div class="col-sm-8">
-                        <input asp-for="Bank_Account_No" class="form-control col-sm-3" readonly />
-                        <span asp-validation-for="Bank_Account_No" class="text-danger"></span>
-                    </div>
-                </div>
+            <div id="LeaveBalance" class="tab-pane">
+                <partial name="LeaveBalance" model="Model.LeaveBalances" />
             </div>
         </div>
-    </section>
+    </div>
 </div>

@@ -8,6 +8,7 @@ using AutoMapper;
 using HRMgmt;
 using HRSystem.Helper;
 using HRSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PostedLeaveRequestCard;
@@ -15,6 +16,7 @@ using RecommendedLeaveRequest;
 
 namespace HRSystem.Controllers
 {
+    [Authorize]
     public class RecommendedLeaveRequestController : Controller
     {
         private readonly IMapper _mapper;
@@ -28,6 +30,7 @@ namespace HRSystem.Controllers
             _mapper = mapper;
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
+            basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
         }
 
         private recommendedleaverequest_PortClient Recommendedleaverequest_PortClientService()

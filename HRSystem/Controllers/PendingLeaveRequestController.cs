@@ -29,6 +29,7 @@ namespace HRSystem.Controllers
             _mapper = mapper;
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
+            basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
         }
 
         private pendingleaverequest_PortClient Pendingleaverequest_PortClientService()

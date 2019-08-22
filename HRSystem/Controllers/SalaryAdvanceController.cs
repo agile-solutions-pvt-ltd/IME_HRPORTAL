@@ -29,6 +29,7 @@ namespace HRSystem.Controllers
             _mapper = mapper;
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
+            basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
         }
 
         private salaryadvancestatus_PortClient Salaryadvancestatus_PortClientService()

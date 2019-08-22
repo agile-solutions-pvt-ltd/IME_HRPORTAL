@@ -282,6 +282,9 @@ namespace IntegrationServices
         
         /// <remarks/>
         Posted_Salary_Advance,
+        
+        /// <remarks/>
+        Posted_Travel_Voucher,
     }
     
     /// <remarks/>

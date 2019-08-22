@@ -29,6 +29,7 @@ namespace HRSystem.Controllers
             _mapper = mapper;
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
+            basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
         }
 
         private travelorderstatus_PortClient Travelorderstatus_PortClientService()
@@ -146,7 +147,8 @@ namespace HRSystem.Controllers
                 {
                     var obj = _mapper.Map<travelordercard>(vmObj);
 
-                    TravelOrderCard.Create createObj = new TravelOrderCard.Create {
+                    TravelOrderCard.Create createObj = new TravelOrderCard.Create
+                    {
                         travelordercard = obj
                     };
 

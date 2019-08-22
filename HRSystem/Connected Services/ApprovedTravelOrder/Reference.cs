@@ -76,6 +76,14 @@ namespace ApprovedTravelOrder
         
         private string order_NoField;
         
+        private System.DateTime depature_Date_ADField;
+        
+        private bool depature_Date_ADFieldSpecified;
+        
+        private System.DateTime arrival_Date_ADField;
+        
+        private bool arrival_Date_ADFieldSpecified;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Key
@@ -299,6 +307,62 @@ namespace ApprovedTravelOrder
                 this.order_NoField = value;
             }
         }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=12)]
+        public System.DateTime Depature_Date_AD
+        {
+            get
+            {
+                return this.depature_Date_ADField;
+            }
+            set
+            {
+                this.depature_Date_ADField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Depature_Date_ADSpecified
+        {
+            get
+            {
+                return this.depature_Date_ADFieldSpecified;
+            }
+            set
+            {
+                this.depature_Date_ADFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=13)]
+        public System.DateTime Arrival_Date_AD
+        {
+            get
+            {
+                return this.arrival_Date_ADField;
+            }
+            set
+            {
+                this.arrival_Date_ADField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Arrival_Date_ADSpecified
+        {
+            get
+            {
+                return this.arrival_Date_ADFieldSpecified;
+            }
+            set
+            {
+                this.arrival_Date_ADFieldSpecified = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -395,6 +459,12 @@ namespace ApprovedTravelOrder
         
         /// <remarks/>
         Order_No,
+        
+        /// <remarks/>
+        Depature_Date_AD,
+        
+        /// <remarks/>
+        Arrival_Date_AD,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

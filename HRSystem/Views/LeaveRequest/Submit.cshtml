@@ -113,9 +113,11 @@
 </section>
 
 @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
     <script src="~/lib/select2/js/select2.min.js"></script>
     <script src="~/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
     <script type="text/javascript">
         (function () {
             $("#Substitute_Employee_No").select2({
@@ -123,8 +125,16 @@
                 allowClear: true
             });
 
-            $("#Leave_Start_Date, #Leave_End_Date").datepicker({
-                startDate: new Date().toLocaleDateString(),
+            $("#Leave_Start_Date").datepicker({
+                startDate: new Date(),
+            }).on('changeDate', function (e) {
+                $("#Leave_End_Date").datepicker('setStartDate', e.date);
+            });
+
+            $("#Leave_End_Date").datepicker({
+                startDate: new Date(),
+            }).on('changeDate', function (e) {
+                $("#Leave_Start_Date").datepicker('setEndDate', e.date);
             });
         })();
     </script>

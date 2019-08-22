@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HRSystem.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -29,6 +28,7 @@ namespace HRSystem.Controllers
             _mapper = mapper;
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
+            basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
         }
 
         private calendarevents_PortClient Calendarevents_PortClientService()

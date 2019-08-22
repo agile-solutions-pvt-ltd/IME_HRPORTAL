@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.ServiceModel;
-using System.Threading.Tasks;
 using EmployeeCard;
 using HRSystem.Helper;
 using HRSystem.Models;
+using LeaveBalance;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace HRSystem.Controllers
 {
+    [Authorize]
     public class EmployeeProfileController : Controller
     {
         readonly BasicHttpBinding basicHttpBinding = new BasicHttpBinding();
@@ -22,6 +24,7 @@ namespace HRSystem.Controllers
         {
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
+            basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
         }
 
         private employeecard_PortClient Employeecard_PortClientService()
@@ -49,22 +52,67 @@ namespace HRSystem.Controllers
             return client;
         }
 
+        private leavebalance_PortClient Leavebalance_PortClientService()
+        {
+            credential.UserName = User.Identity.GetUserName();
+            credential.Password = User.Identity.GetPassword();
+            credential.Domain = config.Integration_Setup.Domain;
+
+            config.Default_Config.Company_Name = User.Identity.GetCompanyName();
+
+            var integrationService = config.Integration_Services
+                .Where(x => x.Integration_Type == "Leave_Balance" && x.Company_Name == config.Default_Config.Company_Name)
+                .FirstOrDefault();
+
+            config.Default_Config.Type = integrationService.Type;
+
+            string URL = ConfigJSON.GetURL(config, integrationService.Service_Name);
+
+            EndpointAddress endpoint = new EndpointAddress(URL);
+
+            var client = new leavebalance_PortClient(basicHttpBinding, endpoint);
+            client.ClientCredentials.Windows.ClientCredential = credential;
+            client.ClientCredentials.Windows.AllowedImpersonationLevel = System.Security.Principal.TokenImpersonationLevel.Impersonation;
+
+            return client;
+        }
+
         public IActionResult Index()
         {
-            employeecard details = new employeecard();
+            EmployeeProfileViewModel vmObj = new EmployeeProfileViewModel
+            {
+                EmployeeCard = new employeecard(),
+                LeaveBalances = new List<leavebalance>()
+            };
+
             try
             {
-                details = Employeecard_PortClientService()
+                vmObj.EmployeeCard = Employeecard_PortClientService()
                     .ReadAsync(User.Identity.GetEmployeeNo())
                     .GetAwaiter()
                     .GetResult()
                     .employeecard;
+
+                leavebalance_Filter[] filter = {
+                    new leavebalance_Filter
+                    {
+                        Field = leavebalance_Fields.Employee_Code,
+                        Criteria = User.Identity.GetEmployeeNo()
+                    }
+                };
+
+                vmObj.LeaveBalances = Leavebalance_PortClientService()
+                    .ReadMultipleAsync(filter, "", 0)
+                    .GetAwaiter()
+                    .GetResult()
+                    .ReadMultiple_Result1
+                    .ToList();
             }
             catch (Exception ex)
             {
                 TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Exception Error", text = ex.Message, type = "error" });
             }
-            return View(details);
+            return View(vmObj);
         }
     }
 }

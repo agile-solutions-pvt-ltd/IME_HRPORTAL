@@ -60,7 +60,7 @@
                                 @item.Requested_Date.ToShortDateString()
                             </td>
                             <td>
-                                @item.Approved_Date.ToShortDateString()
+                                @((item.Approved_Date != DateTime.MinValue) ? item.Approved_Date.ToShortDateString() : "")
                             </td>
                         </tr>
                     }

@@ -7,6 +7,7 @@ using AutoMapper;
 using HRMgmt;
 using HRSystem.Helper;
 using HRSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PostedTravelOrderCard;
@@ -14,6 +15,7 @@ using RecommendedTravelOrder;
 
 namespace HRSystem.Controllers
 {
+    [Authorize]
     public class RecommendedTravelOrderController : Controller
     {
         private readonly IMapper _mapper;
@@ -27,6 +29,7 @@ namespace HRSystem.Controllers
             _mapper = mapper;
             basicHttpBinding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
             basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;
+            basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
         }
 
         private recommendedtravelorder_PortClient Recommendedtravelorder_PortClientService()
