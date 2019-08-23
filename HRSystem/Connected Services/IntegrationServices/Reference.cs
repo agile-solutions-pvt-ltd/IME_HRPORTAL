@@ -285,6 +285,9 @@ namespace IntegrationServices
         
         /// <remarks/>
         Posted_Travel_Voucher,
+        
+        /// <remarks/>
+        HR_Dashboard,
     }
     
     /// <remarks/>

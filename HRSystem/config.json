@@ -829,6 +829,36 @@
       "Service_Name": "postedtravelvouchercard",
       "Type": "Page",
       "Company_Name": "Venture Hire Purchase Pvt. Ltd"
+    },
+    {
+      "Integration_Type": "HR_Dashboard",
+      "Service_Name": "hrdashboard",
+      "Type": "Page",
+      "Company_Name": "Ashok LT Engineering Services"
+    },
+    {
+      "Integration_Type": "HR_Dashboard",
+      "Service_Name": "hrdashboard",
+      "Type": "Page",
+      "Company_Name": "IME Automotives Pvt. Ltd."
+    },
+    {
+      "Integration_Type": "HR_Dashboard",
+      "Service_Name": "hrdashboard",
+      "Type": "Page",
+      "Company_Name": "IME MOTORS PVT. LTD."
+    },
+    {
+      "Integration_Type": "HR_Dashboard",
+      "Service_Name": "hrdashboard",
+      "Type": "Page",
+      "Company_Name": "Test Company"
+    },
+    {
+      "Integration_Type": "HR_Dashboard",
+      "Service_Name": "hrdashboard",
+      "Type": "Page",
+      "Company_Name": "Venture Hire Purchase Pvt. Ltd"
     }
   ],
   "URL": "http://110.34.3.177:4047/MOBAPP/WS/Test Company/Page/"

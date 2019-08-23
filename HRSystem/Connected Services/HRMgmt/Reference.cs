@@ -195,9 +195,14 @@ namespace HRMgmt
         System.Threading.Tasks.Task<HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb_Result> GetapplicablesalaryadvamountandmonthlydeductionwebAsync(HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb request);
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:GetEmployeePicture", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:GetEmployeePictureweb", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<HRMgmt.GetEmployeePicture_Result> GetEmployeePictureAsync(HRMgmt.GetEmployeePicture request);
+        System.Threading.Tasks.Task<HRMgmt.GetEmployeePictureweb_Result> GetEmployeePicturewebAsync(HRMgmt.GetEmployeePictureweb request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:GetClientCompanyLogoweb", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<HRMgmt.GetClientCompanyLogoweb_Result> GetClientCompanyLogowebAsync(HRMgmt.GetClientCompanyLogoweb request);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:ApproveAuthority", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -1952,8 +1957,8 @@ namespace HRMgmt
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeePicture", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
-    public partial class GetEmployeePicture
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeePictureweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class GetEmployeePictureweb
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
@@ -1962,11 +1967,11 @@ namespace HRMgmt
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=1)]
         public string picture;
         
-        public GetEmployeePicture()
+        public GetEmployeePictureweb()
         {
         }
         
-        public GetEmployeePicture(string empNo, string picture)
+        public GetEmployeePictureweb(string empNo, string picture)
         {
             this.empNo = empNo;
             this.picture = picture;
@@ -1975,18 +1980,56 @@ namespace HRMgmt
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeePicture_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
-    public partial class GetEmployeePicture_Result
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeePictureweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class GetEmployeePictureweb_Result
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
         public string picture;
         
-        public GetEmployeePicture_Result()
+        public GetEmployeePictureweb_Result()
         {
         }
         
-        public GetEmployeePicture_Result(string picture)
+        public GetEmployeePictureweb_Result(string picture)
+        {
+            this.picture = picture;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetClientCompanyLogoweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class GetClientCompanyLogoweb
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string picture;
+        
+        public GetClientCompanyLogoweb()
+        {
+        }
+        
+        public GetClientCompanyLogoweb(string picture)
+        {
+            this.picture = picture;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetClientCompanyLogoweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class GetClientCompanyLogoweb_Result
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string picture;
+        
+        public GetClientCompanyLogoweb_Result()
+        {
+        }
+        
+        public GetClientCompanyLogoweb_Result(string picture)
         {
             this.picture = picture;
         }
@@ -2604,9 +2647,14 @@ namespace HRMgmt
             return base.Channel.GetapplicablesalaryadvamountandmonthlydeductionwebAsync(request);
         }
         
-        public System.Threading.Tasks.Task<HRMgmt.GetEmployeePicture_Result> GetEmployeePictureAsync(HRMgmt.GetEmployeePicture request)
+        public System.Threading.Tasks.Task<HRMgmt.GetEmployeePictureweb_Result> GetEmployeePicturewebAsync(HRMgmt.GetEmployeePictureweb request)
         {
-            return base.Channel.GetEmployeePictureAsync(request);
+            return base.Channel.GetEmployeePicturewebAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HRMgmt.GetClientCompanyLogoweb_Result> GetClientCompanyLogowebAsync(HRMgmt.GetClientCompanyLogoweb request)
+        {
+            return base.Channel.GetClientCompanyLogowebAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

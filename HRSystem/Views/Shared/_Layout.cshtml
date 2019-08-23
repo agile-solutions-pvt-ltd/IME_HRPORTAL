@@ -34,7 +34,7 @@
         <header class="header">
             <div class="logo-container">
                 <a asp-controller="Home" asp-action="Index" class="logo">
-                    <h5>HR System</h5>
+                    <img src="" height="45" id="img_CompanyLogo" />
                 </a>
 
                 <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
@@ -48,7 +48,7 @@
 
                 <div id="userbox" class="userbox">
                     <a href="#" data-toggle="dropdown">
-                        <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+                        <div class="profile-info">
                             <span class="name">@User.Identity.Name</span>
                             <span class="role">@User.Identity.GetUserName()</span>
                         </div>
@@ -344,6 +344,14 @@
                     type: notifyDetails.type
                 });
             }
+
+            $.ajax({
+                dataType: "text",
+                url: "@Url.Action("GetCompanyLogo", "Home")",
+                success: function (data) {
+                    $("#img_CompanyLogo").attr('src', data);
+                }
+            });
         })();
     </script>
 
