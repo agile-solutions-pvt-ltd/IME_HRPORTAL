@@ -60,7 +60,8 @@
                                 @Html.DisplayFor(modelItem => item.Travel_Type)
                             </td>
                             <td class="actions">
-                                <a class="btn btn-sm btn-default" asp-action="SubmitSettlement" asp-route-travelOrderNo="@item.Travel_Order_No">
+                                <a class="btn btn-sm btn-default" style="color:blue;" asp-action="SubmitSettlement" asp-route-travelOrderNo="@item.Travel_Order_No">
+                                    <i class="fa fa-plus"></i>
                                     Create Settlement
                                 </a>
                             </td>

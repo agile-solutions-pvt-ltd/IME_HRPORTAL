@@ -11,7 +11,7 @@ namespace PendingLeaveRequest
 {
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", ConfigurationName="PendingLeaveRequest.pendingleaverequest_Port")]
     public interface pendingleaverequest_Port
     {
@@ -38,7 +38,7 @@ namespace PendingLeaveRequest
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest")]
     public partial class pendingleaverequest
@@ -55,6 +55,10 @@ namespace PendingLeaveRequest
         private string leave_Type_CodeField;
         
         private string leave_DescriptionField;
+        
+        private Leave_Type leave_TypeField;
+        
+        private bool leave_TypeFieldSpecified;
         
         private string work_Shift_DescriptionField;
         
@@ -194,6 +198,34 @@ namespace PendingLeaveRequest
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public Leave_Type Leave_Type
+        {
+            get
+            {
+                return this.leave_TypeField;
+            }
+            set
+            {
+                this.leave_TypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Leave_TypeSpecified
+        {
+            get
+            {
+                return this.leave_TypeFieldSpecified;
+            }
+            set
+            {
+                this.leave_TypeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string Work_Shift_Description
         {
             get
@@ -207,7 +239,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=8)]
         public System.DateTime Requested_Date
         {
             get
@@ -235,7 +267,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=9)]
         public System.DateTime Leave_Start_Date
         {
             get
@@ -263,7 +295,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=10)]
         public System.DateTime Leave_End_Date
         {
             get
@@ -291,7 +323,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="time", Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="time", Order=11)]
         public System.DateTime Leave_Start_Time
         {
             get
@@ -319,7 +351,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="time", Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="time", Order=12)]
         public System.DateTime Leave_End_Time
         {
             get
@@ -347,7 +379,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string Fiscal_Year
         {
             get
@@ -361,7 +393,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string Remarks
         {
             get
@@ -375,7 +407,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public bool Approved
         {
             get
@@ -403,7 +435,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=16)]
         public System.DateTime Approval_Date
         {
             get
@@ -431,7 +463,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string Approval_Comment
         {
             get
@@ -445,7 +477,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public bool Rejected
         {
             get
@@ -473,7 +505,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=19)]
         public System.DateTime Reject_Date
         {
             get
@@ -501,7 +533,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public string Rejection_Remarks
         {
             get
@@ -515,7 +547,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public Leave_Status Leave_Status
         {
             get
@@ -543,7 +575,7 @@ namespace PendingLeaveRequest
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
         public string Leave_Request_No
         {
             get
@@ -558,7 +590,26 @@ namespace PendingLeaveRequest
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest")]
+    public enum Leave_Type
+    {
+        
+        /// <remarks/>
+        _blank_,
+        
+        /// <remarks/>
+        First_Half_Leave,
+        
+        /// <remarks/>
+        Second_Half_Leave,
+        
+        /// <remarks/>
+        Full_Day_Leave,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest")]
     public enum Leave_Status
     {
@@ -580,7 +631,7 @@ namespace PendingLeaveRequest
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest")]
     public partial class pendingleaverequest_Filter
@@ -620,7 +671,7 @@ namespace PendingLeaveRequest
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest")]
     public enum pendingleaverequest_Fields
     {
@@ -639,6 +690,9 @@ namespace PendingLeaveRequest
         
         /// <remarks/>
         Leave_Description,
+        
+        /// <remarks/>
+        Leave_Type,
         
         /// <remarks/>
         Work_Shift_Description,
@@ -690,7 +744,7 @@ namespace PendingLeaveRequest
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Read", WrapperNamespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", IsWrapped=true)]
     public partial class Read
@@ -710,7 +764,7 @@ namespace PendingLeaveRequest
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Read_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", IsWrapped=true)]
     public partial class Read_Result
@@ -730,7 +784,7 @@ namespace PendingLeaveRequest
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="ReadByRecId", WrapperNamespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", IsWrapped=true)]
     public partial class ReadByRecId
@@ -750,7 +804,7 @@ namespace PendingLeaveRequest
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="ReadByRecId_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", IsWrapped=true)]
     public partial class ReadByRecId_Result
@@ -770,7 +824,7 @@ namespace PendingLeaveRequest
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="ReadMultiple", WrapperNamespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", IsWrapped=true)]
     public partial class ReadMultiple
@@ -799,7 +853,7 @@ namespace PendingLeaveRequest
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="ReadMultiple_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", IsWrapped=true)]
     public partial class ReadMultiple_Result
@@ -820,7 +874,7 @@ namespace PendingLeaveRequest
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="IsUpdated", WrapperNamespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", IsWrapped=true)]
     public partial class IsUpdated
@@ -840,7 +894,7 @@ namespace PendingLeaveRequest
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="IsUpdated_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", IsWrapped=true)]
     public partial class IsUpdated_Result
@@ -860,7 +914,7 @@ namespace PendingLeaveRequest
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetRecIdFromKey", WrapperNamespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", IsWrapped=true)]
     public partial class GetRecIdFromKey
@@ -880,7 +934,7 @@ namespace PendingLeaveRequest
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GetRecIdFromKey_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/page/pendingleaverequest", IsWrapped=true)]
     public partial class GetRecIdFromKey_Result
@@ -899,13 +953,13 @@ namespace PendingLeaveRequest
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     public interface pendingleaverequest_PortChannel : PendingLeaveRequest.pendingleaverequest_Port, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30422-0661")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
     public partial class pendingleaverequest_PortClient : System.ServiceModel.ClientBase<PendingLeaveRequest.pendingleaverequest_Port>, PendingLeaveRequest.pendingleaverequest_Port
     {
         

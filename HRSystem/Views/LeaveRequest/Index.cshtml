@@ -60,10 +60,10 @@
                                 @Html.DisplayFor(modelItem => item.Leave_Type_Code)
                             </td>
                             <td>
-                                @item.Leave_Start_Date.ToShortDateString()
+                                @((item.Leave_Start_Date != DateTime.MinValue) ? item.Leave_Start_Date.ToShortDateString() : "")
                             </td>
                             <td>
-                                @item.Leave_End_Date.ToShortDateString()
+                                @((item.Leave_End_Date != DateTime.MinValue) ? item.Leave_End_Date.ToShortDateString() : "")
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Leave_Status)

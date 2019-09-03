@@ -1,6 +1,6 @@
 ﻿{
   "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
-  "Version": "15.0.30423.811",
+  "Version": "15.0.30515.712",
   "ExtendedData": {
     "inputs": [
       "http://110.34.3.177:4047/MOBAPP/WS/Test%20Company/Page/recommendedleaverequest"

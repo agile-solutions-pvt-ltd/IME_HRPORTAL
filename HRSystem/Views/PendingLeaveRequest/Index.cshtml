@@ -30,6 +30,9 @@
                             Leave Type Code
                         </th>
                         <th>
+                            Leave Type
+                        </th>
+                        <th>
                             Leave Start Date
                         </th>
                         <th>
@@ -57,20 +60,23 @@
                                 @Html.DisplayFor(modelItem => item.Leave_Type_Code)
                             </td>
                             <td>
-                                @item.Leave_Start_Date.ToShortDateString()
+                                @Html.DisplayFor(modeltem => item.Leave_Type)
                             </td>
                             <td>
-                                @item.Leave_End_Date.ToShortDateString()
+                                @((item.Leave_Start_Date != DateTime.MinValue) ? item.Leave_Start_Date.ToShortDateString() : "")
+                            </td>
+                            <td>
+                                @((item.Leave_End_Date != DateTime.MinValue) ? item.Leave_End_Date.ToShortDateString() : "")
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Leave_Request_No)
                             </td>
                             <td class="actions">
-                                <a title="Recommend" data-toggle="tooltip" asp-action="RecommendRequest" asp-route-leaveRequestNo="@item.Leave_Request_No">
+                                <a title="Recommend" data-toggle="tooltip" class="btn btn-sm btn-default" style="color:green;" asp-action="RecommendRequest" asp-route-leaveRequestNo="@item.Leave_Request_No">
                                     <i class="fa fa-check-circle-o"></i>
                                 </a>
 
-                                <a title="Reject" data-toggle="tooltip" asp-action="RejectRequest" asp-route-leaveRequestNo="@item.Leave_Request_No">
+                                <a title="Reject" data-toggle="tooltip" class="btn btn-sm btn-default" style="color:red;" asp-action="RejectRequest" asp-route-leaveRequestNo="@item.Leave_Request_No">
                                     <i class="fa fa-ban"></i>
                                 </a>
                             </td>
