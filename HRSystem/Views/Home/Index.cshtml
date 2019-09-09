@@ -401,6 +401,8 @@
                 });
             }
 
+            UpdateEventList(new Date());
+
             $("#calendar").datepicker({
                 beforeShowDay: function (date) {
                     let eventDetails = calendarEventDates.find(x => x.Date.toLocaleDateString() == date.toLocaleDateString());

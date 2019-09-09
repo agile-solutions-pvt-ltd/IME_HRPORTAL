@@ -1,0 +1,45 @@
+﻿@model HRSystem.Models.SalarySlipViewModel
+
+@{
+    ViewData["Title"] = "Salary Pay Slip";
+}
+
+<section class="panel">
+    <form asp-action="Index" target="_blank">
+        <header class="panel-heading">
+            <h2 class="panel-title">
+                Salary Pay Slip
+            </h2>
+        </header>
+
+        <div class="panel-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label asp-for="month" class="col-sm-4 control-label"></label>
+
+                    <div class="col-sm-8">
+                        <select asp-items="Html.GetEnumSelectList<NepaliMonths>()" asp-for="month" class="form-control"></select>
+                        <span asp-validation-for="month" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 form-group">
+                    <div class="checkbox-custom checkbox-default checkbox-inline mt-sm ml-md mr-md">
+                        <input asp-for="irregular">
+                        <label asp-for="irregular"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="panel-footer">
+            <input type="submit" value="View" class="btn btn-success" />
+        </footer>
+    </form>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

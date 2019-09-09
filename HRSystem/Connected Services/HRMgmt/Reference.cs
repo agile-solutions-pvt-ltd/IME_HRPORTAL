@@ -16,6 +16,15 @@ namespace HRMgmt
     public interface hrmgt_Port
     {
         
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:GetEmployeePictureweb", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<HRMgmt.GetEmployeePictureweb_Result> GetEmployeePicturewebAsync(HRMgmt.GetEmployeePictureweb request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:MoveToMagicPath", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<HRMgmt.MoveToMagicPath_Result> MoveToMagicPathAsync(HRMgmt.MoveToMagicPath request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:CalculateTotalDays", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.CalculateTotalDays_Result> CalculateTotalDaysAsync(HRMgmt.CalculateTotalDays request);
@@ -184,6 +193,7 @@ namespace HRMgmt
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.Rejecttravelvoucherweb_Result> RejecttravelvoucherwebAsync(HRMgmt.Rejecttravelvoucherweb request);
         
+        // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:Printsalaryslipweb", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.Printsalaryslipweb_Result> PrintsalaryslipwebAsync(HRMgmt.Printsalaryslipweb request);
@@ -193,11 +203,6 @@ namespace HRMgmt
             "hlydeductionweb", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb_Result> GetapplicablesalaryadvamountandmonthlydeductionwebAsync(HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb request);
-        
-        // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:GetEmployeePictureweb", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<HRMgmt.GetEmployeePictureweb_Result> GetEmployeePicturewebAsync(HRMgmt.GetEmployeePictureweb request);
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:GetClientCompanyLogoweb", ReplyAction="*")]
@@ -211,6 +216,88 @@ namespace HRMgmt
         [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/hrmgt:UpdateInLeaveAccount", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<HRMgmt.UpdateInLeaveAccount_Result> UpdateInLeaveAccountAsync(HRMgmt.UpdateInLeaveAccount request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeePictureweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class GetEmployeePictureweb
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string empNo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=1)]
+        public string picture;
+        
+        public GetEmployeePictureweb()
+        {
+        }
+        
+        public GetEmployeePictureweb(string empNo, string picture)
+        {
+            this.empNo = empNo;
+            this.picture = picture;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeePictureweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class GetEmployeePictureweb_Result
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string picture;
+        
+        public GetEmployeePictureweb_Result()
+        {
+        }
+        
+        public GetEmployeePictureweb_Result(string picture)
+        {
+            this.picture = picture;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MoveToMagicPath", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class MoveToMagicPath
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string sourceFileName;
+        
+        public MoveToMagicPath()
+        {
+        }
+        
+        public MoveToMagicPath(string sourceFileName)
+        {
+            this.sourceFileName = sourceFileName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MoveToMagicPath_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
+    public partial class MoveToMagicPath_Result
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
+        public string return_value;
+        
+        public MoveToMagicPath_Result()
+        {
+        }
+        
+        public MoveToMagicPath_Result(string return_value)
+        {
+            this.return_value = return_value;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1859,7 +1946,6 @@ namespace HRMgmt
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Printsalaryslipweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Printsalaryslipweb
     {
@@ -1873,35 +1959,38 @@ namespace HRMgmt
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=2)]
         public string employeeNo;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=3)]
+        public string picture;
+        
         public Printsalaryslipweb()
         {
         }
         
-        public Printsalaryslipweb(int month, bool irregular, string employeeNo)
+        public Printsalaryslipweb(int month, bool irregular, string employeeNo, string picture)
         {
             this.month = month;
             this.irregular = irregular;
             this.employeeNo = employeeNo;
+            this.picture = picture;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="Printsalaryslipweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
     public partial class Printsalaryslipweb_Result
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
-        public string return_value;
+        public string picture;
         
         public Printsalaryslipweb_Result()
         {
         }
         
-        public Printsalaryslipweb_Result(string return_value)
+        public Printsalaryslipweb_Result(string picture)
         {
-            this.return_value = return_value;
+            this.picture = picture;
         }
     }
     
@@ -1952,48 +2041,6 @@ namespace HRMgmt
         {
             this.applicableAmt = applicableAmt;
             this.monthlyDeduction = monthlyDeduction;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeePictureweb", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
-    public partial class GetEmployeePictureweb
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
-        public string empNo;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=1)]
-        public string picture;
-        
-        public GetEmployeePictureweb()
-        {
-        }
-        
-        public GetEmployeePictureweb(string empNo, string picture)
-        {
-            this.empNo = empNo;
-            this.picture = picture;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.1-preview-30514-0828")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEmployeePictureweb_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", IsWrapped=true)]
-    public partial class GetEmployeePictureweb_Result
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/hrmgt", Order=0)]
-        public string picture;
-        
-        public GetEmployeePictureweb_Result()
-        {
-        }
-        
-        public GetEmployeePictureweb_Result(string picture)
-        {
-            this.picture = picture;
         }
     }
     
@@ -2163,6 +2210,24 @@ namespace HRMgmt
         public hrmgt_PortClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
+        }
+        
+        public System.Threading.Tasks.Task<HRMgmt.GetEmployeePictureweb_Result> GetEmployeePicturewebAsync(HRMgmt.GetEmployeePictureweb request)
+        {
+            return base.Channel.GetEmployeePicturewebAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HRMgmt.MoveToMagicPath_Result> HRMgmt.hrmgt_Port.MoveToMagicPathAsync(HRMgmt.MoveToMagicPath request)
+        {
+            return base.Channel.MoveToMagicPathAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HRMgmt.MoveToMagicPath_Result> MoveToMagicPathAsync(string sourceFileName)
+        {
+            HRMgmt.MoveToMagicPath inValue = new HRMgmt.MoveToMagicPath();
+            inValue.sourceFileName = sourceFileName;
+            return ((HRMgmt.hrmgt_Port)(this)).MoveToMagicPathAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2627,29 +2692,14 @@ namespace HRMgmt
             return ((HRMgmt.hrmgt_Port)(this)).RejecttravelvoucherwebAsync(inValue);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<HRMgmt.Printsalaryslipweb_Result> HRMgmt.hrmgt_Port.PrintsalaryslipwebAsync(HRMgmt.Printsalaryslipweb request)
+        public System.Threading.Tasks.Task<HRMgmt.Printsalaryslipweb_Result> PrintsalaryslipwebAsync(HRMgmt.Printsalaryslipweb request)
         {
             return base.Channel.PrintsalaryslipwebAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<HRMgmt.Printsalaryslipweb_Result> PrintsalaryslipwebAsync(int month, bool irregular, string employeeNo)
-        {
-            HRMgmt.Printsalaryslipweb inValue = new HRMgmt.Printsalaryslipweb();
-            inValue.month = month;
-            inValue.irregular = irregular;
-            inValue.employeeNo = employeeNo;
-            return ((HRMgmt.hrmgt_Port)(this)).PrintsalaryslipwebAsync(inValue);
         }
         
         public System.Threading.Tasks.Task<HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb_Result> GetapplicablesalaryadvamountandmonthlydeductionwebAsync(HRMgmt.Getapplicablesalaryadvamountandmonthlydeductionweb request)
         {
             return base.Channel.GetapplicablesalaryadvamountandmonthlydeductionwebAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<HRMgmt.GetEmployeePictureweb_Result> GetEmployeePicturewebAsync(HRMgmt.GetEmployeePictureweb request)
-        {
-            return base.Channel.GetEmployeePicturewebAsync(request);
         }
         
         public System.Threading.Tasks.Task<HRMgmt.GetClientCompanyLogoweb_Result> GetClientCompanyLogowebAsync(HRMgmt.GetClientCompanyLogoweb request)
