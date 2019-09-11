@@ -24,6 +24,16 @@ namespace HRSystem.Models
 
         public bool Travel_Allowance_OnlySpecified { get; set; }
 
+        [Display(Name = "Lodging Allowance Only")]
+        public bool Lodging_Allowance_Only { get; set; }
+
+        public bool Lodging_Allowance_OnlySpecified { get; set; }
+
+        [Display(Name = "Fooding Allowance Only")]
+        public bool Fooding_Allowance_Only { get; set; }
+
+        public bool Fooding_Allowance_OnlySepcified { get; set; }
+
         [Display(Name = "Daily Allowance Only")]
         public bool Daily_Allowance_Only { get; set; }
 
@@ -88,16 +98,17 @@ namespace HRSystem.Models
         public string Requested_By { get; set; }
         public bool Extension { get; set; }
         public bool ExtensionSpecified { get; set; }
+
+        [Required]
+        [Display(Name = "Rejection Remarks")]
+        public string Rejection_Remarks { get; set; }
+
         public string Country { get; set; }
 
         [Display(Name = "Exchange Rate")]
         public decimal Exchange_Rate { get; set; }
 
         public bool Exchange_RateSpecified { get; set; }
-
-        [Required]
-        [Display(Name = "Rejection Remarks")]
-        public string Rejection_Remarks { get; set; }
 
         [Display(Name = "Claimed TA")]
         public decimal Claimed_TA { get; set; }
@@ -108,6 +119,16 @@ namespace HRSystem.Models
         public decimal Claimed_DA { get; set; }
 
         public bool Claimed_DASpecified { get; set; }
+
+        [Display(Name = "Claimed Lodging")]
+        public decimal Claimed_Lodging { get; set; }
+
+        public bool Claimed_LodgingSpecified { get; set; }
+
+        [Display(Name = "Claimed Fooding")]
+        public decimal Claimed_Fooding { get; set; }
+
+        public bool Claimed_FoodingSpecified { get; set; }
 
         [Display(Name = "Claimed TADA")]
         public decimal Claimed_TADA { get; set; }
@@ -138,6 +159,16 @@ namespace HRSystem.Models
         public decimal Travel_Allowance { get; set; }
 
         public bool Travel_AllowanceSpecified { get; set; }
+
+        [Display(Name = "Lodging Allowance")]
+        public decimal Lodging_Allowance { get; set; }
+
+        public bool Lodging_AllowanceSpecified { get; set; }
+
+
+        [Display(Name = "Fooding Allowance")]
+        public decimal Fooding_Allowance { get; set; }
+        public bool Fooding_AllowanceSpecified { get; set; }
 
         [Display(Name = "Daily Allowance")]
         public decimal Daily_Allowance { get; set; }

@@ -4,6 +4,7 @@
     "Type": "Page",
     "Username": "dynamic",
     "Password": "Dynamic@log1nIME",
+    "IsForRemit":  true,
     "Integration_Services": [
       {
         "Integration_Type": "Company",

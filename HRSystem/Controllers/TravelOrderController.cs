@@ -135,6 +135,8 @@ namespace HRSystem.Controllers
 
         public IActionResult Submit()
         {
+            Config config = ConfigJSON.Read();
+            ViewBag.IsForRemit = config.Default_Config.IsForRemit;
             return View();
         }
 
@@ -154,14 +156,29 @@ namespace HRSystem.Controllers
 
                     createObj.travelordercard.Employee_Name = null;
                     createObj.travelordercard.Employee_No = User.Identity.GetEmployeeNo();
+                    createObj.travelordercard.Travel_TypeSpecified = true;
+                    createObj.travelordercard.Expenses_OnlySpecified = true;
+
+                    Config config = ConfigJSON.Read();
+                    if(config.Default_Config.IsForRemit)
+                    {
+                        createObj.travelordercard.Fooding_Allowance_OnlySpecified = true;
+                        createObj.travelordercard.Lodging_Allowance_OnlySpecified = true;
+                    }
+                    else
+                    {
+                        createObj.travelordercard.Travel_Allowance_OnlySpecified = true;
+                    }
+
+                    createObj.travelordercard.Daily_Allowance_OnlySpecified = true;
                     createObj.travelordercard.Depature_Date_ADSpecified = true;
                     createObj.travelordercard.Arrival_Date_ADSpecified = true;
-                    createObj.travelordercard.Travel_TypeSpecified = true;
                     createObj.travelordercard.Reason_for_TravelSpecified = true;
                     createObj.travelordercard.Mode_Of_TransportationSpecified = true;
                     createObj.travelordercard.Approved_TypeSpecified = true;
-                    createObj.travelordercard.Travel_StatusSpecified = true;
                     createObj.travelordercard.Exchange_RateSpecified = true;
+                    createObj.travelordercard.Travel_StatusSpecified = true;
+
                     createObj.travelordercard.Claimed_Local_TransportationSpecified = true;
                     createObj.travelordercard.Claimed_FuelSpecified = true;
                     createObj.travelordercard.Claimed_Other_ExpensesSpecified = true;

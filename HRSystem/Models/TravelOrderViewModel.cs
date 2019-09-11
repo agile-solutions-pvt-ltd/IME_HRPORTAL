@@ -10,6 +10,14 @@ namespace HRSystem.Models
         public string Travel_Order_No { get; set; }
 
         [Required]
+        [Display(Name = "Employee No")]
+        public string Employee_No { get; set; }
+
+        [Required]
+        [Display(Name = "Employee Name")]
+        public string Employee_Name { get; set; }
+
+        [Required]
         [Display(Name = "Travel Type")]
         [Range(1, int.MaxValue, ErrorMessage = "The Travel Type field is required.")]
         public Travel_Type Travel_Type { get; set; }
@@ -25,9 +33,15 @@ namespace HRSystem.Models
         public bool Travel_Allowance_Only { get; set; }
 
         public bool Travel_Allowance_OnlySpecified { get; set; }
+
+        [Display(Name = "Loding Allowance Only")]
         public bool Lodging_Allowance_Only { get; set; }
+
         public bool Lodging_Allowance_OnlySpecified { get; set; }
+
+        [Display(Name = "Fooding Allowance Only")]
         public bool Fooding_Allowance_Only { get; set; }
+
         public bool Fooding_Allowance_OnlySpecified { get; set; }
 
         [Display(Name = "Daily Allowance Only")]
@@ -53,14 +67,6 @@ namespace HRSystem.Models
         public string Arrival_Date_BS { get; set; }
         public int No_of_Days { get; set; }
         public bool No_of_DaysSpecified { get; set; }
-
-        [Required]
-        [Display(Name = "Employee No")]
-        public string Employee_No { get; set; }
-
-        [Required]
-        [Display(Name = "Employee Name")]
-        public string Employee_Name { get; set; }
 
         public string Designation { get; set; }
         public string Department { get; set; }

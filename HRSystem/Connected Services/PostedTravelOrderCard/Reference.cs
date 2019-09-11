@@ -88,6 +88,14 @@ namespace PostedTravelOrderCard
         
         private bool travel_Allowance_OnlyFieldSpecified;
         
+        private bool lodging_Allowance_OnlyField;
+        
+        private bool lodging_Allowance_OnlyFieldSpecified;
+        
+        private bool fooding_Allowance_OnlyField;
+        
+        private bool fooding_Allowance_OnlyFieldSpecified;
+        
         private bool daily_Allowance_OnlyField;
         
         private bool daily_Allowance_OnlyFieldSpecified;
@@ -154,6 +162,12 @@ namespace PostedTravelOrderCard
         
         private string rejection_RemarksField;
         
+        private string countryField;
+        
+        private decimal exchange_RateField;
+        
+        private bool exchange_RateFieldSpecified;
+        
         private decimal claimed_TAField;
         
         private bool claimed_TAFieldSpecified;
@@ -161,6 +175,14 @@ namespace PostedTravelOrderCard
         private decimal claimed_DAField;
         
         private bool claimed_DAFieldSpecified;
+        
+        private decimal claimed_LodgingField;
+        
+        private bool claimed_LodgingFieldSpecified;
+        
+        private decimal claimed_FoodingField;
+        
+        private bool claimed_FoodingFieldSpecified;
         
         private decimal claimed_TADAField;
         
@@ -185,6 +207,14 @@ namespace PostedTravelOrderCard
         private decimal travel_AllowanceField;
         
         private bool travel_AllowanceFieldSpecified;
+        
+        private decimal lodging_AllowanceField;
+        
+        private bool lodging_AllowanceFieldSpecified;
+        
+        private decimal fooding_AllowanceField;
+        
+        private bool fooding_AllowanceFieldSpecified;
         
         private decimal daily_AllowanceField;
         
@@ -356,6 +386,62 @@ namespace PostedTravelOrderCard
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public bool Lodging_Allowance_Only
+        {
+            get
+            {
+                return this.lodging_Allowance_OnlyField;
+            }
+            set
+            {
+                this.lodging_Allowance_OnlyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Lodging_Allowance_OnlySpecified
+        {
+            get
+            {
+                return this.lodging_Allowance_OnlyFieldSpecified;
+            }
+            set
+            {
+                this.lodging_Allowance_OnlyFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public bool Fooding_Allowance_Only
+        {
+            get
+            {
+                return this.fooding_Allowance_OnlyField;
+            }
+            set
+            {
+                this.fooding_Allowance_OnlyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Fooding_Allowance_OnlySpecified
+        {
+            get
+            {
+                return this.fooding_Allowance_OnlyFieldSpecified;
+            }
+            set
+            {
+                this.fooding_Allowance_OnlyFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public bool Daily_Allowance_Only
         {
             get
@@ -383,7 +469,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string Departure_Branch
         {
             get
@@ -397,7 +483,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=9)]
         public System.DateTime Depature_Date_AD
         {
             get
@@ -425,7 +511,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string Depature_Date_BS
         {
             get
@@ -439,7 +525,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=11)]
         public System.DateTime Arrival_Date_AD
         {
             get
@@ -467,7 +553,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string Arrival_Date_BS
         {
             get
@@ -481,7 +567,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public int No_of_Days
         {
             get
@@ -509,7 +595,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string Employee_No
         {
             get
@@ -523,7 +609,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public string Employee_Name
         {
             get
@@ -537,7 +623,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string Designation
         {
             get
@@ -551,7 +637,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string Department
         {
             get
@@ -565,7 +651,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public string Travel_Destination_I
         {
             get
@@ -579,7 +665,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public string Travel_Destination_II
         {
             get
@@ -593,7 +679,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public string Travel_Destination_III
         {
             get
@@ -607,7 +693,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public Reason_for_Travel Reason_for_Travel
         {
             get
@@ -635,7 +721,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
         public string Remarks
         {
             get
@@ -649,7 +735,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public Mode_Of_Transportation Mode_Of_Transportation
         {
             get
@@ -677,7 +763,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
         public string Mode_Of_Transportation_Others
         {
             get
@@ -691,7 +777,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
         public Approved_Type Approved_Type
         {
             get
@@ -719,7 +805,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public string Order_No
         {
             get
@@ -733,7 +819,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=27)]
         public System.DateTime Requested_Date
         {
             get
@@ -761,7 +847,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
         public string Requested_By
         {
             get
@@ -775,7 +861,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public bool Extension
         {
             get
@@ -803,7 +889,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
         public string Rejection_Remarks
         {
             get
@@ -817,7 +903,49 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        public string Country
+        {
+            get
+            {
+                return this.countryField;
+            }
+            set
+            {
+                this.countryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        public decimal Exchange_Rate
+        {
+            get
+            {
+                return this.exchange_RateField;
+            }
+            set
+            {
+                this.exchange_RateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Exchange_RateSpecified
+        {
+            get
+            {
+                return this.exchange_RateFieldSpecified;
+            }
+            set
+            {
+                this.exchange_RateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
         public decimal Claimed_TA
         {
             get
@@ -845,7 +973,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
         public decimal Claimed_DA
         {
             get
@@ -873,7 +1001,63 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        public decimal Claimed_Lodging
+        {
+            get
+            {
+                return this.claimed_LodgingField;
+            }
+            set
+            {
+                this.claimed_LodgingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Claimed_LodgingSpecified
+        {
+            get
+            {
+                return this.claimed_LodgingFieldSpecified;
+            }
+            set
+            {
+                this.claimed_LodgingFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        public decimal Claimed_Fooding
+        {
+            get
+            {
+                return this.claimed_FoodingField;
+            }
+            set
+            {
+                this.claimed_FoodingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Claimed_FoodingSpecified
+        {
+            get
+            {
+                return this.claimed_FoodingFieldSpecified;
+            }
+            set
+            {
+                this.claimed_FoodingFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
         public decimal Claimed_TADA
         {
             get
@@ -901,7 +1085,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
         public decimal Claimed_Local_Transportation
         {
             get
@@ -929,7 +1113,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
         public decimal Claimed_Fuel
         {
             get
@@ -957,7 +1141,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
         public decimal Claimed_Other_Expenses
         {
             get
@@ -985,7 +1169,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
         public decimal Claimed_Total
         {
             get
@@ -1013,7 +1197,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
         public decimal Travel_Allowance
         {
             get
@@ -1041,7 +1225,63 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
+        public decimal Lodging_Allowance
+        {
+            get
+            {
+                return this.lodging_AllowanceField;
+            }
+            set
+            {
+                this.lodging_AllowanceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Lodging_AllowanceSpecified
+        {
+            get
+            {
+                return this.lodging_AllowanceFieldSpecified;
+            }
+            set
+            {
+                this.lodging_AllowanceFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
+        public decimal Fooding_Allowance
+        {
+            get
+            {
+                return this.fooding_AllowanceField;
+            }
+            set
+            {
+                this.fooding_AllowanceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool Fooding_AllowanceSpecified
+        {
+            get
+            {
+                return this.fooding_AllowanceFieldSpecified;
+            }
+            set
+            {
+                this.fooding_AllowanceFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
         public decimal Daily_Allowance
         {
             get
@@ -1069,7 +1309,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
         public decimal TADA_Nrs
         {
             get
@@ -1097,7 +1337,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=47)]
         public decimal Transportation_Ticket_Nrs
         {
             get
@@ -1125,7 +1365,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=48)]
         public decimal Local_Transportation_Nrs
         {
             get
@@ -1153,7 +1393,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=41)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=49)]
         public decimal Fuel_Nrs
         {
             get
@@ -1181,7 +1421,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=42)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=50)]
         public decimal Other_Expenses_Nrs
         {
             get
@@ -1209,7 +1449,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=43)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=51)]
         public decimal Total_Nrs
         {
             get
@@ -1237,7 +1477,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=44)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=52)]
         public Travel_Status Travel_Status
         {
             get
@@ -1265,7 +1505,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=45)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=53)]
         public string Recommender_Code
         {
             get
@@ -1279,7 +1519,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=46)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=54)]
         public string Recommender_Name
         {
             get
@@ -1293,7 +1533,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=47)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=55)]
         public string Approver_Code
         {
             get
@@ -1307,7 +1547,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=48)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=56)]
         public string Approver_Name
         {
             get
@@ -1321,7 +1561,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=49)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=57)]
         public string HR_Code
         {
             get
@@ -1335,7 +1575,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=50)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=58)]
         public string HR_Name
         {
             get
@@ -1349,7 +1589,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=51)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=59)]
         public string Journal_Template_Name
         {
             get
@@ -1363,7 +1603,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=52)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=60)]
         public string Journal_Batch_Name
         {
             get
@@ -1377,7 +1617,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=53)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=61)]
         public Account_Type Account_Type
         {
             get
@@ -1405,7 +1645,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=54)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=62)]
         public string Account_No
         {
             get
@@ -1419,7 +1659,7 @@ namespace PostedTravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=55)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=63)]
         [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
         public TADA_Setup[] TADA_Setup
         {
@@ -1745,6 +1985,12 @@ namespace PostedTravelOrderCard
         Travel_Allowance_Only,
         
         /// <remarks/>
+        Lodging_Allowance_Only,
+        
+        /// <remarks/>
+        Fooding_Allowance_Only,
+        
+        /// <remarks/>
         Daily_Allowance_Only,
         
         /// <remarks/>
@@ -1817,10 +2063,22 @@ namespace PostedTravelOrderCard
         Rejection_Remarks,
         
         /// <remarks/>
+        Country,
+        
+        /// <remarks/>
+        Exchange_Rate,
+        
+        /// <remarks/>
         Claimed_TA,
         
         /// <remarks/>
         Claimed_DA,
+        
+        /// <remarks/>
+        Claimed_Lodging,
+        
+        /// <remarks/>
+        Claimed_Fooding,
         
         /// <remarks/>
         Claimed_TADA,
@@ -1839,6 +2097,12 @@ namespace PostedTravelOrderCard
         
         /// <remarks/>
         Travel_Allowance,
+        
+        /// <remarks/>
+        Lodging_Allowance,
+        
+        /// <remarks/>
+        Fooding_Allowance,
         
         /// <remarks/>
         Daily_Allowance,

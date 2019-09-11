@@ -76,6 +76,10 @@ namespace TravelOrderCard
         
         private string travel_Order_NoField;
         
+        private string employee_NoField;
+        
+        private string employee_NameField;
+        
         private Travel_Type travel_TypeField;
         
         private bool travel_TypeFieldSpecified;
@@ -117,10 +121,6 @@ namespace TravelOrderCard
         private int no_of_DaysField;
         
         private bool no_of_DaysFieldSpecified;
-        
-        private string employee_NoField;
-        
-        private string employee_NameField;
         
         private string designationField;
         
@@ -300,6 +300,34 @@ namespace TravelOrderCard
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Employee_No
+        {
+            get
+            {
+                return this.employee_NoField;
+            }
+            set
+            {
+                this.employee_NoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Employee_Name
+        {
+            get
+            {
+                return this.employee_NameField;
+            }
+            set
+            {
+                this.employee_NameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public Travel_Type Travel_Type
         {
             get
@@ -327,7 +355,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public bool Expenses_Only
         {
             get
@@ -355,7 +383,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public bool Travel_Allowance_Only
         {
             get
@@ -383,7 +411,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public bool Lodging_Allowance_Only
         {
             get
@@ -411,7 +439,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public bool Fooding_Allowance_Only
         {
             get
@@ -439,7 +467,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public bool Daily_Allowance_Only
         {
             get
@@ -467,7 +495,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         public string Departure_Branch
         {
             get
@@ -481,7 +509,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=11)]
         public System.DateTime Depature_Date_AD
         {
             get
@@ -509,7 +537,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string Depature_Date_BS
         {
             get
@@ -523,7 +551,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=13)]
         public System.DateTime Arrival_Date_AD
         {
             get
@@ -551,7 +579,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string Arrival_Date_BS
         {
             get
@@ -565,7 +593,7 @@ namespace TravelOrderCard
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public int No_of_Days
         {
             get
@@ -589,34 +617,6 @@ namespace TravelOrderCard
             set
             {
                 this.no_of_DaysFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
-        public string Employee_No
-        {
-            get
-            {
-                return this.employee_NoField;
-            }
-            set
-            {
-                this.employee_NoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
-        public string Employee_Name
-        {
-            get
-            {
-                return this.employee_NameField;
-            }
-            set
-            {
-                this.employee_NameField = value;
             }
         }
         
@@ -1960,6 +1960,12 @@ namespace TravelOrderCard
         Travel_Order_No,
         
         /// <remarks/>
+        Employee_No,
+        
+        /// <remarks/>
+        Employee_Name,
+        
+        /// <remarks/>
         Travel_Type,
         
         /// <remarks/>
@@ -1994,12 +2000,6 @@ namespace TravelOrderCard
         
         /// <remarks/>
         No_of_Days,
-        
-        /// <remarks/>
-        Employee_No,
-        
-        /// <remarks/>
-        Employee_Name,
         
         /// <remarks/>
         Designation,

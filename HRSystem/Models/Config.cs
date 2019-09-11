@@ -14,6 +14,7 @@
         public string Type { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public bool IsForRemit { get; set; }
         public Integration_Service[] Integration_Services { get; set; }
     }
 

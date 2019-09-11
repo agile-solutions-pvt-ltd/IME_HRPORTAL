@@ -154,6 +154,8 @@ namespace HRSystem.Controllers
             {
                 TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Exception Error", text = ex.Message, type = "error" });
             }
+            Config config = ConfigJSON.Read();
+            ViewBag.IsForRemit = config.Default_Config.IsForRemit;
             return View(vmObj);
         }
 
@@ -243,6 +245,8 @@ namespace HRSystem.Controllers
             {
                 TempData["Notify"] = JsonConvert.SerializeObject(new Notify { title = "Exception Error", text = ex.Message, type = "error" });
             }
+            Config config = ConfigJSON.Read();
+            ViewBag.IsForRemit = config.Default_Config.IsForRemit;
             return View(vmObj);
         }
 
